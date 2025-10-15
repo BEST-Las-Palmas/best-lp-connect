@@ -49,15 +49,6 @@ const Header = () => {
               {item.name}
             </Link>
           ))}
-          <span className="text-muted-foreground">|</span>
-          <a
-            href="https://www.best.eu.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-          >
-            BEST International
-          </a>
         </div>
 
         <div className="flex items-center gap-2">
