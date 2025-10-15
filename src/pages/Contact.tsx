@@ -6,11 +6,14 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
+import socialLinks from '@/settings/social-links.json';
 
 const Contact = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,9 +24,7 @@ const Contact = () => {
     e.preventDefault();
     toast({
       title: t('contact.form.success'),
-      description: language === 'es' 
-        ? 'Nos pondremos en contacto contigo pronto.' 
-        : 'We will get in touch with you soon.',
+      description: t('contact.form.description'),
     });
     setFormData({ name: '', email: '', message: '' });
   };
@@ -34,12 +35,6 @@ const Contact = () => {
       [e.target.name]: e.target.value,
     }));
   };
-
-  const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook', color: 'hover:text-[#1877F2]' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-[#E4405F]' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-[#0A66C2]' },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -136,7 +131,7 @@ const Contact = () => {
                           <br />
                           35017 Las Palmas de Gran Canaria
                           <br />
-                          {language === 'es' ? 'España' : 'Spain'}
+                          {t('contact.info.country')}
                         </p>
                       </div>
                     </div>
@@ -144,70 +139,54 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
+              {/* Social Links */}
               <Card className="border-none bg-gradient-card shadow-lg">
                 <CardContent className="p-8">
                   <h2 className="mb-6 text-2xl font-bold">{t('contact.social')}</h2>
                   <div className="flex gap-4">
-                    {socialLinks.map((social) => (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex h-14 w-14 items-center justify-center rounded-lg bg-secondary text-foreground transition-all hover:scale-110 ${social.color}`}
-                        aria-label={social.label}
-                      >
-                        <social.icon className="h-6 w-6" />
-                      </a>
-                    ))}
+                    {socialLinks.map((social) => {
+                      const Icon = (LucideIcons as any)[social.icon];
+                      return (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex h-14 w-14 items-center justify-center rounded-lg bg-secondary text-foreground transition-all hover:scale-110`}
+                          aria-label={social.label}
+                        >
+                          {Icon && <Icon className="h-6 w-6" />}
+                        </a>
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-none shadow-lg overflow-hidden">
-                <div className="aspect-video bg-secondary flex items-center justify-center">
-                  <MapPin className="h-16 w-16 text-muted-foreground" />
+              {/* Map Card */}
+              <Card
+                className="border-none shadow-lg overflow-hidden cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    'https://www.google.com/maps?q=Escuela+de+Ingenier%C3%ADa+de+Telecomunicaci%C3%B3n+y+Electr%C3%B3nica+(EITE)+ULPGC&ll=28.073465,-15.452362&z=17',
+                    '_blank'
+                  )
+                }
+              >
+                <div className="aspect-video">
+                  <iframe
+                    title="Mapa EITE ULPGC"
+                    src="https://www.google.com/maps?q=Escuela+de+Ingenier%C3%ADa+de+Telecomunicaci%C3%B3n+y+Electr%C3%B3nica+(EITE)+ULPGC&ll=28.073465,-15.452362&z=17&output=embed"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full border-0"
+                  ></iframe>
                 </div>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-padding bg-secondary/50">
-        <div className="container-custom">
-          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
-            {language === 'es' ? 'Preguntas Frecuentes' : 'Frequently Asked Questions'}
-          </h2>
-          <div className="mx-auto max-w-3xl space-y-6">
-            {[
-              {
-                question: language === 'es' ? '¿Cómo puedo unirme a BEST?' : 'How can I join BEST?',
-                answer: language === 'es'
-                  ? 'Cualquier estudiante de ingeniería o tecnología de la ULPGC puede unirse a BEST. Contáctanos para más información sobre el proceso de inscripción.'
-                  : 'Any engineering or technology student from ULPGC can join BEST. Contact us for more information about the registration process.',
-              },
-              {
-                question: language === 'es' ? '¿Qué tipo de eventos organizan?' : 'What type of events do you organize?',
-                answer: language === 'es'
-                  ? 'Organizamos cursos BEST, workshops técnicos, competencias de ingeniería, eventos de networking y actividades de intercambio cultural.'
-                  : 'We organize BEST courses, technical workshops, engineering competitions, networking events, and cultural exchange activities.',
-              },
-              {
-                question: language === 'es' ? '¿Los eventos tienen costo?' : 'Do events have a cost?',
-                answer: language === 'es'
-                  ? 'Algunos eventos son gratuitos, mientras que otros tienen un costo simbólico para cubrir materiales y logística. Los miembros de BEST suelen tener descuentos.'
-                  : 'Some events are free, while others have a symbolic cost to cover materials and logistics. BEST members usually get discounts.',
-              },
-            ].map((faq, index) => (
-              <Card key={index} className="border-none bg-card shadow-md">
-                <CardContent className="p-6">
-                  <h3 className="mb-2 text-lg font-bold">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

@@ -1,0 +1,129 @@
+{
+    "nav.home": "Home",
+    "nav.about": "About Us",
+    "nav.events": "Events",
+    "nav.contact": "Contact",
+    
+    "home.hero.title": "Connecting Technology Students",
+    "home.hero.subtitle": "BEST Las Palmas is part of an international network connecting engineering and technology students across Europe",
+    "home.hero.cta": "Join Us",
+    "home.hero.learn": "Learn More",
+    
+    "home.about.title": "What is BEST?",
+    "home.about.subtitle": "Board of European Students of Technology",
+    "home.about.description": "BEST is an international non-profit student organization connecting over 3,000 technology students from 90 European universities. We promote complementary education, cultural exchange, and cooperation among engineering students.",
+    
+    "home.local.title": "BEST Las Palmas",
+    "home.local.description": "We are the local BEST group at Universidad de Las Palmas de Gran Canaria (ULPGC). We organize courses, workshops, engineering competitions, and cultural exchange events for technology students.",
+    
+    "home.stats.students": "Active Students",
+    "home.stats.events": "Events per Year",
+    "home.stats.universities": "Universities in Europe",
+    
+    "home.values.title": "Our Values",
+    "home.values.education": "Education",
+    "home.values.education.desc": "We complement academic training with practical courses and workshops",
+    "home.values.culture": "Cultural Exchange",
+    "home.values.culture.desc": "We connect students from different countries and cultures",
+    "home.values.cooperation": "Cooperation",
+    "home.values.cooperation.desc": "We promote teamwork and international collaboration",
+    
+    "about.title": "About Us",
+    "about.mission.title": "Our Mission",
+    "about.mission.text": "To promote academic excellence and personal development of technology students through complementary educational experiences, cultural exchange, and international cooperation.",
+    "about.vision.title": "Our Vision",
+    "about.vision.text": "To be the reference point for engineering and technology students in Las Palmas, connecting them with academic and professional growth opportunities at the European level.",
+    
+    "about.board.title": "Board of Directors",
+    "about.board.description": "Meet the team that makes BEST Las Palmas possible",
+    
+    "about.board.president": "President",
+    "about.board.president.quote": "Leading with passion",
+
+    "about.board.secretary": "Secretary",
+    "about.board.secretary.quote": "Organizing excellence",
+
+    "about.board.treasurer": "Treasurer",
+    "about.board.treasurer.quote": "Managing resources for maximum impact",
+
+    "about.board.hr": "Human Resources",
+    "about.board.hr.quote": "Building strong teams, creating leaders",
+
+    "about.board.cr": "Corporate Relations",
+    "about.board.cr.quote": "Connecting students with industry",
+
+    "about.board.prd": "Public Relations & Design",
+    "about.board.prd.quote": "Crafting our story, sharing our vision",
+
+    "about.board.it": "IT",
+    "about.board.it.quote": "Powering innovation with technology",
+
+    "about.board.pet": "Pet",
+    "about.board.pet.quote": "Our dearest oldest member",
+
+    "history.title": "Our History",
+    "history.1": "BEST Las Palmas is part of Board of European Students of Technology (BEST), an international non-profit student organization founded in 1989 that connects technology students from over 90 European universities.",
+    "history.2": "Our local group at Universidad de Las Palmas de Gran Canaria works to offer students unique opportunities for personal and professional development, complementing their academic training with practical experiences and international connections.",
+    "history.3": "Through BEST courses, technical workshops, engineering competitions, and cultural exchange events, we create an environment where students can grow, learn, and connect with professionals and peers from across Europe.",
+    
+    "events.title": "Events",
+    "events.description" : "Discover our upcoming events and relive the highlights",
+    "events.upcoming": "Upcoming Events",
+    "events.past": "Past Events",
+    "events.register": "Register",
+    "events.gallery": "View Gallery",
+    "events.filter.all": "All",
+    "events.filter.workshop": "Workshops",
+    "events.filter.course": "Courses",
+    "events.filter.competition": "Competitions",
+    "events.participants": "participants",
+
+    "events.upcoming.1.title": "Artificial Intelligence Workshop",
+    "events.upcoming.1.date": "November 15, 2025",
+    "events.upcoming.1.description": "Learn the fundamentals of Machine Learning and Deep Learning with industry experts.",
+
+    "events.upcoming.2.title": "Robotics Competition",
+    "events.upcoming.2.date": "December 3, 2025",
+    "events.upcoming.2.description": "Showcase your robotics skills and compete with other technology students.",
+
+    "events.upcoming.3.title": "BEST Course: Advanced Web Development",
+    "events.upcoming.3.date": "January 10–15, 2026",
+    "events.upcoming.3.description": "Intensive one-week course on modern web technologies and best practices.",
+
+    "events.past.1.title": "Sustainability Hackathon",
+    "events.past.1.date": "September 20, 2025",
+    "events.past.1.description": "Develop technological solutions for sustainability challenges in 24 hours.",
+
+    "events.past.2.title": "Cybersecurity Workshop",
+    "events.past.2.date": "October 5, 2025",
+    "events.past.2.description": "Learn about computer security, ethical hacking, and data protection.",
+    
+    "contact.title": "Contact Us",
+    "contact.subtitle": "Have questions? We are here to help",
+    "contact.form.name": "Name",
+    "contact.form.email": "Email",
+    "contact.form.message": "Message",
+    "contact.form.send": "Send Message",
+    "contact.form.success": "Message sent successfully!",
+    "contact.form.description": "We will get in touch with you soon.",
+    "contact.info.title": "Contact Information",
+    "contact.info.email": "Email",
+    "contact.info.country": "Spain",
+    "contact.info.location": "Location",
+    "contact.info.location.text": "Universidad de Las Palmas de Gran Canaria",
+    "contact.social": "Social Media",
+    
+    "footer.about": "About BEST",
+    "footer.about.text": "BEST Las Palmas is part of Board of European Students of Technology, an international non-profit organization.",
+    "footer.quick": "Quick Links",
+    "footer.social": "Follow Us",
+    "footer.rights": "All rights reserved.",
+    
+    "testimonials.title": "Testimonials",
+    "testimonials.1.role": "Computer Engineering Student",
+    "testimonials.1.quote": "BEST events have helped me develop skills I wouldn't learn in class. Totally recommended!",
+    "testimonials.2.role": "Industrial Engineering Student",
+    "testimonials.2.quote": "I met students from all over Europe and learned from the best professionals in the industry.",
+    "testimonials.3.role": "Telecommunications Student",
+    "testimonials.3.quote": "BEST has been a transformative experience. I've grown both personally and professionally."
+}

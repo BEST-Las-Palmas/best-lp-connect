@@ -9,7 +9,7 @@ const Home = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { value: '100+', label: t('home.stats.students') },
+    { value: '3000+', label: t('home.stats.students') },
     { value: '20+', label: t('home.stats.events') },
     { value: '90+', label: t('home.stats.universities') },
   ];
@@ -30,6 +30,8 @@ const Home = () => {
       title: t('home.values.cooperation'),
       description: t('home.values.cooperation.desc'),
     },
+    
+
   ];
 
   return (

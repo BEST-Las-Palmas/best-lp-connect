@@ -1,0 +1,22 @@
+[
+  {
+    "id": 4,
+    "titleKey": "events.past.1.title",
+    "dateKey": "events.past.1.date",
+    "descriptionKey": "events.past.1.description",
+    "type": "competition",
+    "location": "ULPGC",
+    "participants": 80,
+    "image": "eventCompetition"
+  },
+  {
+    "id": 5,
+    "titleKey": "events.past.2.title",
+    "dateKey": "events.past.2.date",
+    "descriptionKey": "events.past.2.description",
+    "type": "workshop",
+    "location": "ULPGC - Edificio de Informática",
+    "participants": 50,
+    "image": "eventWorkshop"
+  }
+]

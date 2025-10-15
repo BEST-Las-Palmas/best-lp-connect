@@ -1,0 +1,17 @@
+[
+  {
+    "name": "María González",
+    "roleKey": "testimonials.1.role",
+    "quoteKey": "testimonials.1.quote"
+  },
+  {
+    "name": "Juan Pérez",
+    "roleKey": "testimonials.2.role",
+    "quoteKey": "testimonials.2.quote"
+  },
+  {
+    "name": "Lucía Martín",
+    "roleKey": "testimonials.3.role",
+    "quoteKey": "testimonials.3.quote"
+  }
+]

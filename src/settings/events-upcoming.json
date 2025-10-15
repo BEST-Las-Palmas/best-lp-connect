@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "titleKey": "events.upcoming.1.title",
+    "dateKey": "events.upcoming.1.date",
+    "descriptionKey": "events.upcoming.1.description",
+    "type": "workshop",
+    "location": "ULPGC - Edificio de Informática",
+    "participants": 40,
+    "image": "eventWorkshop"
+  },
+  {
+    "id": 2,
+    "titleKey": "events.upcoming.2.title",
+    "dateKey": "events.upcoming.2.date",
+    "descriptionKey": "events.upcoming.2.description",
+    "type": "competition",
+    "location": "ULPGC - Laboratorio de Robótica",
+    "participants": 60,
+    "image": "eventCompetition"
+  },
+  {
+    "id": 3,
+    "titleKey": "events.upcoming.3.title",
+    "dateKey": "events.upcoming.3.date",
+    "descriptionKey": "events.upcoming.3.description",
+    "type": "course",
+    "location": "ULPGC - Campus Tafira",
+    "participants": 30,
+    "image": "eventWorkshop"
+  }
+]

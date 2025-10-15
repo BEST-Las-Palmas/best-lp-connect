@@ -31,7 +31,9 @@ const Header = () => {
       <nav className="container-custom flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-hero">
-            <span className="text-xl font-bold text-primary-foreground">B</span>
+            <image>
+              
+            </image>
           </div>
           <span className="text-xl font-bold gradient-text">BEST Las Palmas</span>
         </Link>
@@ -82,19 +84,6 @@ const Header = () => {
           <Button variant="ghost" size="icon" onClick={toggleTheme}>
             {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
           </Button>
-
-          {/* Separator */}
-          <span className="hidden md:inline text-muted-foreground">|</span>
-
-          {/* BEST International Link */}
-          <a
-            href="https://www.best.eu.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-          >
-            BEST International
-          </a>
 
           {/* Mobile Menu Button */}
           <Button

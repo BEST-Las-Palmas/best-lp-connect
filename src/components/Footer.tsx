@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import socialLinks from '@/settings/social-links.json';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -12,28 +14,10 @@ const Footer = () => {
     { name: t('nav.contact'), href: '/contact' },
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  ];
-
   return (
     <footer className="border-t bg-card">
       <div className="container-custom py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {/* About Section */}
-          <div>
-            <div className="mb-4 flex items-center space-x-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-hero">
-                <span className="text-xl font-bold text-primary-foreground">B</span>
-              </div>
-              <span className="text-lg font-bold gradient-text">BEST Las Palmas</span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              {t('footer.about.text')}
-            </p>
-          </div>
 
           {/* Quick Links */}
           <div>
@@ -50,6 +34,12 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Spacer */}
+          <div>
+            <div className="mb-4 flex items-center space-x-2">
+            </div>
           </div>
 
           {/* Contact Info */}
@@ -77,18 +67,21 @@ const Footer = () => {
             <div className="mt-6">
               <h4 className="mb-3 text-sm font-semibold">{t('footer.social')}</h4>
               <div className="flex gap-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-4 w-4" />
-                  </a>
-                ))}
+                {socialLinks.map((social) => {
+                  const Icon = (LucideIcons as any)[social.icon];
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                      aria-label={social.label}
+                    >
+                      {Icon ? <Icon className="h-4 w-4" /> : null}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>

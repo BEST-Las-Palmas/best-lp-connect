@@ -1,0 +1,50 @@
+[
+    {
+      "name": "Susana",
+      "position": "about.board.president",
+      "quote": "about.board.president.quote",
+      "image": "👤"
+    },
+    {
+      "name": "Miguel",
+      "position": "about.board.secretary",
+      "quote": "about.board.secretary.quote",
+      "image": "👤"
+    },
+    {
+      "name": "Juan Carlos",
+      "position": "about.board.treasurer",
+      "quote": "about.board.treasurer.quote",
+      "image": "👤"
+    },
+    {
+      "name": "María",
+      "position": "about.board.hr",
+      "quote": "about.board.hr.quote",
+      "image": "👤"
+    },
+    {
+      "name": "Adrian",
+      "position": "about.board.cr",
+      "quote": "about.board.cr.quote",
+      "image": "👤"
+    },
+    {
+      "name": "Camila",
+      "position": "about.board.prd",
+      "quote": "about.board.prd.quote",
+      "image": "👤"
+    },
+    {
+      "name": "Óscar",
+      "position": "about.board.it",
+      "quote": "about.board.it.quote",
+      "image": "👤"
+    },
+    {
+      "name": "Palmito",
+      "position": "about.board.pet",
+      "quote": "about.board.pet.quote",
+      "image": "👤"
+    }
+]
