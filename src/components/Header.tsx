@@ -74,6 +74,19 @@ const Header = () => {
             {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
           </Button>
 
+          {/* Separator */}
+          <span className="hidden md:inline text-muted-foreground">|</span>
+
+          {/* BEST International Link */}
+          <a
+            href="https://www.best.eu.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            BEST International
+          </a>
+
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
