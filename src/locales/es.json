@@ -82,6 +82,7 @@
     "events.notfound": "Evento no encontrado.",
     "events.back": "Volver a eventos",
     "events.registerNow": "Inscribirme ahora",
+    "events.featured": "Destacado",
     
     "events.detail.about": "Acerca del Evento",
     "events.detail.objectives": "Objetivos",
@@ -92,6 +93,13 @@
     "events.detail.location": "Ubicación",
     "events.detail.capacity": "Capacidad",
     "events.detail.contactToRegister": "Contactar para Inscribirse",
+
+    "events.course.subtitle": "¡Prepárate para una experiencia inolvidable!",
+    "events.course.whyTitle": "¿Por qué asistir a este curso?",
+    "events.course.learnTitle": "Lo que aprenderás",
+    "events.course.learnSubtitle": "Nuestro completo curso cubre todo lo que necesitas para comenzar tu viaje. Te guiaremos en cada paso del camino.",
+    "events.course.ctaTitle": "¿Listo para comenzar?",
+    "events.course.ctaSubtitle": "No pierdas esta oportunidad única de aprender y crecer con BEST",
 
     "events.upcoming.1.title": "Workshop de Inteligencia Artificial",
     "events.upcoming.1.date": "15 de Noviembre, 2025",

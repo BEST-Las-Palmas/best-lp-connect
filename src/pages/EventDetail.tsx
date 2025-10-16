@@ -35,7 +35,174 @@ const EventDetail = () => {
   const title = t(event.titleKey);
   const date = t(event.dateKey);
   const description = t(event.descriptionKey);
+  const isCourse = event.type === 'course';
 
+  // Course layout inspired by BEST Graz
+  if (isCourse) {
+    return (
+      <div className="min-h-screen">
+        {/* Hero Section with Background Image */}
+        <section className="relative min-h-[85vh] flex items-center justify-center">
+          <div className="absolute inset-0">
+            <img
+              src={image}
+              alt={title}
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+          </div>
+          
+          <div className="relative z-10 container-custom text-center text-white px-4">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">{title}</h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-slide-up">{description}</p>
+            {event.registrationUrl && (
+              <Button size="lg" className="text-lg px-8 py-6 animate-scale-in" asChild>
+                <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+                  {t('events.registerNow')}
+                </a>
+              </Button>
+            )}
+            <p className="mt-8 text-lg opacity-90 animate-fade-in">
+              {t('events.course.subtitle')}
+            </p>
+          </div>
+        </section>
+
+        {/* Why Section */}
+        <section className="section-padding bg-background">
+          <div className="container-custom max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              {t('events.course.whyTitle')}
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {event.objectives?.map((obj: string, idx: number) => (
+                <Card key={idx} className="border-none shadow-md hover:shadow-glow transition-all">
+                  <CardContent className="p-6 text-center">
+                    <h3 className="font-bold text-lg mb-3">{t(obj)}</h3>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What You'll Learn Section */}
+        <section className="section-padding bg-secondary/30">
+          <div className="container-custom max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              {t('events.course.learnTitle')}
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
+              {t('events.course.learnSubtitle')}
+            </p>
+            
+            {event.agenda && (
+              <div className="grid md:grid-cols-2 gap-8">
+                {event.agenda.map((item: any, idx: number) => (
+                  <div key={idx} className="flex gap-4 items-start">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">{item.time}</h3>
+                      <p className="text-muted-foreground">{t(item.activityKey)}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Event Details */}
+        <section className="section-padding bg-background">
+          <div className="container-custom max-w-4xl">
+            <Card className="border-none shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl">{t('events.detail.info')}</CardTitle>
+              </CardHeader>
+              <CardContent className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center text-center p-4 rounded-lg bg-secondary/30">
+                  <Calendar className="h-8 w-8 text-primary mb-3" />
+                  <p className="font-medium mb-1">{t('events.detail.date')}</p>
+                  <p className="text-muted-foreground">{date}</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-4 rounded-lg bg-secondary/30">
+                  <MapPin className="h-8 w-8 text-primary mb-3" />
+                  <p className="font-medium mb-1">{t('events.detail.location')}</p>
+                  <p className="text-muted-foreground">{event.location}</p>
+                </div>
+                <div className="flex flex-col items-center text-center p-4 rounded-lg bg-secondary/30">
+                  <Users className="h-8 w-8 text-primary mb-3" />
+                  <p className="font-medium mb-1">{t('events.detail.capacity')}</p>
+                  <p className="text-muted-foreground">{event.participants} {t('events.participants')}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Gallery */}
+        {event.gallery && event.gallery.length > 0 && (
+          <section className="section-padding bg-secondary/30">
+            <div className="container-custom max-w-6xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+                {t('events.detail.gallery')}
+              </h2>
+              <PhotoProvider>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {event.gallery.map((photo: string, idx: number) => (
+                    <PhotoView key={idx} src={photo}>
+                      <img
+                        src={photo}
+                        alt={`${title} - ${idx + 1}`}
+                        className="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-all hover:scale-105"
+                      />
+                    </PhotoView>
+                  ))}
+                </div>
+              </PhotoProvider>
+            </div>
+          </section>
+        )}
+
+        {/* CTA Section */}
+        <section className="section-padding bg-gradient-hero text-center">
+          <div className="container-custom">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+              {t('events.course.ctaTitle')}
+            </h2>
+            <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+              {t('events.course.ctaSubtitle')}
+            </p>
+            {event.registrationUrl ? (
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
+                <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+                  {t('events.registerNow')}
+                </a>
+              </Button>
+            ) : (
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
+                <Link to="/contact">{t('events.detail.contactToRegister')}</Link>
+              </Button>
+            )}
+          </div>
+        </section>
+
+        {/* Back button */}
+        <div className="container-custom max-w-6xl py-8">
+          <Link to="/events">
+            <Button variant="ghost" className="flex items-center gap-2">
+              <ArrowLeft className="h-4 w-4" />
+              {t('events.back')}
+            </Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Standard event layout
   return (
     <div className="min-h-screen py-16 section-padding">
       <div className="container-custom max-w-5xl">

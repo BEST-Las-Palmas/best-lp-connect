@@ -33,7 +33,12 @@ const Events = () => {
     date: t(e.dateKey),
     description: t(e.descriptionKey),
     image: imageMap[e.image],
-  }));
+  })).sort((a, b) => {
+    // Courses always appear first
+    if (a.type === 'course' && b.type !== 'course') return -1;
+    if (a.type !== 'course' && b.type === 'course') return 1;
+    return 0;
+  });
 
   const pastEvents = pastEventsData.map(e => ({
     ...e,
@@ -69,49 +74,60 @@ const Events = () => {
     }
   };
 
-  const EventCard = ({ event, isPast = false }: { event: any; isPast?: boolean }) => (
-    <Card className="overflow-hidden border-none shadow-md transition-all hover:shadow-glow hover:scale-105">
-      <div className="aspect-video overflow-hidden">
-        <img
-          src={event.image}
-          alt={event.title}
-          className="h-full w-full object-cover transition-transform hover:scale-110"
-        />
-      </div>
-      <CardContent className="p-6">
-        <div className="mb-3 flex items-center gap-2">
-          <Badge variant={getTypeBadgeVariant(event.type) as any}>
-            {getTypeLabel(event.type)}
-          </Badge>
+  const EventCard = ({ event, isPast = false }: { event: any; isPast?: boolean }) => {
+    const isCourse = event.type === 'course';
+    
+    return (
+      <Card className={`overflow-hidden border-none shadow-md transition-all hover:shadow-glow hover:scale-105 ${isCourse && !isPast ? 'ring-2 ring-primary shadow-elegant' : ''}`}>
+        <div className="aspect-video overflow-hidden relative">
+          <img
+            src={event.image}
+            alt={event.title}
+            className="h-full w-full object-cover transition-transform hover:scale-110"
+          />
+          {isCourse && !isPast && (
+            <div className="absolute top-4 right-4">
+              <Badge variant="secondary" className="bg-primary text-primary-foreground shadow-lg">
+                {t('events.featured')}
+              </Badge>
+            </div>
+          )}
         </div>
-        <h3 className="mb-2 text-xl font-bold">{event.title}</h3>
-        <p className="mb-4 text-sm text-muted-foreground">{event.description}</p>
-        <div className="space-y-2 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
-            <span>{event.date}</span>
+        <CardContent className="p-6">
+          <div className="mb-3 flex items-center gap-2">
+            <Badge variant={getTypeBadgeVariant(event.type) as any}>
+              {getTypeLabel(event.type)}
+            </Badge>
           </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4" />
-            <span>{event.location}</span>
+          <h3 className="mb-2 text-xl font-bold">{event.title}</h3>
+          <p className="mb-4 text-sm text-muted-foreground">{event.description}</p>
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              <span>{event.date}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4" />
+              <span>{event.location}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="h-4 w-4" />
+              <span>{event.participants} {t('events.participants')}</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <Users className="h-4 w-4" />
-            <span>{event.participants} {t('events.participants')}</span>
-          </div>
-        </div>
-      </CardContent>
-      <CardFooter className="p-6 pt-0">
-        {!isPast ? (
-          <Link to={`/events/${event.id}`} className="w-full">
-            <Button className="w-full">{t('events.viewmore')}</Button>
-          </Link>
-        ) : (
-          <Button variant="outline" className="w-full" onClick={() => { setSelectedEvent(event); setIsGalleryOpen(true); }}>{t('events.gallery')}</Button>
-        )}
-      </CardFooter>
-    </Card>
-  );
+        </CardContent>
+        <CardFooter className="p-6 pt-0">
+          {!isPast ? (
+            <Link to={`/events/${event.id}`} className="w-full">
+              <Button className="w-full">{t('events.viewmore')}</Button>
+            </Link>
+          ) : (
+            <Button variant="outline" className="w-full" onClick={() => { setSelectedEvent(event); setIsGalleryOpen(true); }}>{t('events.gallery')}</Button>
+          )}
+        </CardFooter>
+      </Card>
+    );
+  };
 
   return (
     <div className="min-h-screen">

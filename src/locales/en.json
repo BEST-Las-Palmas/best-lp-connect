@@ -82,6 +82,7 @@
     "events.notfound": "Event not found.",
     "events.back": "Back to events",
     "events.registerNow": "Register now",
+    "events.featured": "Featured",
     
     "events.detail.about": "About this Event",
     "events.detail.objectives": "Objectives",
@@ -92,6 +93,13 @@
     "events.detail.location": "Location",
     "events.detail.capacity": "Capacity",
     "events.detail.contactToRegister": "Contact to Register",
+
+    "events.course.subtitle": "Get ready for an unforgettable experience!",
+    "events.course.whyTitle": "Why attend this course?",
+    "events.course.learnTitle": "What you'll learn",
+    "events.course.learnSubtitle": "Our comprehensive course covers everything you need to start your journey. We'll guide you every step of the way.",
+    "events.course.ctaTitle": "Ready to get started?",
+    "events.course.ctaSubtitle": "Don't miss this unique opportunity to learn and grow with BEST",
 
     "events.upcoming.1.title": "Artificial Intelligence Workshop",
     "events.upcoming.1.date": "November 15, 2025",
