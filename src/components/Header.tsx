@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Moon, Sun, Globe } from 'lucide-react';
+import { Menu, X, Moon, Sun, Globe, LanguagesIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -66,10 +66,14 @@ const Header = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-popover z-50">
               <DropdownMenuItem onClick={() => setLanguage('es')}>
-                🇪🇸 Español
+                <span className="flex items-center gap-2">
+                  <span className="fi fi-es" /> Español
+                </span>
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setLanguage('en')}>
-                🇬🇧 English
+                <span className="flex items-center gap-2">
+                  <span className="fi fi-gb" /> English
+                </span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
