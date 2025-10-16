@@ -4,7 +4,7 @@
     "titleKey": "events.upcoming.1.title",
     "dateKey": "events.upcoming.1.date",
     "descriptionKey": "events.upcoming.1.description",
-    "type": "workshop",
+    "type": "internal",
     "location": "ULPGC - Edificio de Informática",
     "participants": 40,
     "image": "eventWorkshop",
@@ -44,28 +44,5 @@
     ],
     "gallery": [],
     "registrationUrl": "https://forms.gle/example2"
-  },
-  {
-    "id": 3,
-    "titleKey": "events.upcoming.3.title",
-    "dateKey": "events.upcoming.3.date",
-    "descriptionKey": "events.upcoming.3.description",
-    "type": "course",
-    "location": "ULPGC - Campus Tafira",
-    "participants": 30,
-    "image": "eventWorkshop",
-    "objectives": [
-      "events.upcoming.3.objective1",
-      "events.upcoming.3.objective2",
-      "events.upcoming.3.objective3"
-    ],
-    "agenda": [
-      { "time": "09:00", "activityKey": "events.upcoming.3.agenda1" },
-      { "time": "11:30", "activityKey": "events.upcoming.3.agenda2" },
-      { "time": "14:00", "activityKey": "events.upcoming.3.agenda3" },
-      { "time": "16:30", "activityKey": "events.upcoming.3.agenda4" }
-    ],
-    "gallery": [],
-    "registrationUrl": "https://forms.gle/example3"
   }
 ]

@@ -4,9 +4,9 @@
     "titleKey": "events.past.1.title",
     "dateKey": "events.past.1.date",
     "descriptionKey": "events.past.1.description",
-    "type": "competition",
-    "location": "ULPGC",
-    "participants": 80,
+    "type": "internal",
+    "location": "Cortijo de Huertas",
+    "participants": 40,
     "image": "eventCompetition",
     "objectives": [
       "events.past.1.objective1",
@@ -23,15 +23,14 @@
       "/logo.png",
       "/logo.png",
       "/logo.png"
-    ],
-    "registrationUrl": ""
+    ]
   },
   {
     "id": 5,
     "titleKey": "events.past.2.title",
     "dateKey": "events.past.2.date",
     "descriptionKey": "events.past.2.description",
-    "type": "workshop",
+    "type": "cultural",
     "location": "ULPGC - Edificio de Informática",
     "participants": 50,
     "image": "eventWorkshop",
@@ -46,7 +45,6 @@
       { "time": "15:00", "activityKey": "events.past.2.agenda3" },
       { "time": "17:00", "activityKey": "events.past.2.agenda4" }
     ],
-    "gallery": [],
-    "registrationUrl": ""
+    "gallery": []
   }
 ]

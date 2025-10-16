@@ -29,6 +29,14 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        internal: {
+          DEFAULT: "hsl(var(--internal))",
+          foreground: "hsl(var(--internal-foreground))",
+        },
+        cultural: {
+          DEFAULT: "hsl(var(--cultural))",
+          foreground: "hsl(var(--cultural-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

@@ -8,12 +8,15 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, } from '@/components/
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { useLanguage } from '@/hooks/useLanguage';
-import { Calendar, MapPin, Users } from 'lucide-react';
+import { Calendar, MapPin, Users, Clock } from 'lucide-react';
 import eventWorkshop from '@/assets/event-workshop.jpg';
 import eventCompetition from '@/assets/event-competition.jpg';
 
 import upcomingEventsData from '@/settings/events-upcoming.json';
 import pastEventsData from '@/settings/events-past.json';
+
+import upcomingCoursesData from '@/settings/courses-upcoming.json';
+import pastCoursesData from '@/settings/courses-past.json';
 import testimonialsData from '@/settings/testimonials.json';
 
 const imageMap: Record<string, string> = {
@@ -25,7 +28,9 @@ const Events = () => {
   const { t } = useLanguage();
   const [filter, setFilter] = useState<string>('all');
   const [selectedEvent, setSelectedEvent] = useState<any | null>(null);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<any | null>(null);
+  const [isGalleryEventOpen, setIsGalleryEventOpen] = useState(false);
+  const [isGalleryCourseOpen, setIsGalleryCourseOpen] = useState(false);
 
   const upcomingEvents = upcomingEventsData.map(e => ({
     ...e,
@@ -33,12 +38,7 @@ const Events = () => {
     date: t(e.dateKey),
     description: t(e.descriptionKey),
     image: imageMap[e.image],
-  })).sort((a, b) => {
-    // Courses always appear first
-    if (a.type === 'course' && b.type !== 'course') return -1;
-    if (a.type !== 'course' && b.type === 'course') return 1;
-    return 0;
-  });
+  }));
 
   const pastEvents = pastEventsData.map(e => ({
     ...e,
@@ -48,14 +48,32 @@ const Events = () => {
     image: imageMap[e.image],
   }));
 
+  const upcomingCourses = upcomingCoursesData.map(c => ({
+    ...c,
+    title: t(c.titleKey),
+    date: t(c.dateKey),
+    description: t(c.descriptionKey),
+    image: imageMap[c.image],
+  }));
+
+  const pastCourses = pastCoursesData.map(c => ({
+    ...c,
+    title: t(c.titleKey),
+    date: t(c.dateKey),
+    description: t(c.descriptionKey),
+    image: imageMap[c.image],
+  }));
+
   const getTypeLabel = (type: string) => {
     switch (type) {
       case 'workshop':
         return t('events.filter.workshop');
-      case 'course':
-        return t('events.filter.course');
       case 'competition':
         return t('events.filter.competition');
+      case 'internal':
+        return t('events.filter.internal');
+      case 'cultural':
+        return t('events.filter.cultural');
       default:
         return type;
     }
@@ -65,33 +83,26 @@ const Events = () => {
     switch (type) {
       case 'workshop':
         return 'default';
-      case 'course':
-        return 'secondary';
       case 'competition':
         return 'destructive';
+      case 'internal':
+        return 'internal';
+      case 'cultural':
+        return 'cultural';
       default:
         return 'default';
     }
   };
 
   const EventCard = ({ event, isPast = false }: { event: any; isPast?: boolean }) => {
-    const isCourse = event.type === 'course';
-    
     return (
-      <Card className={`overflow-hidden border-none shadow-md transition-all hover:shadow-glow hover:scale-105 ${isCourse && !isPast ? 'ring-2 ring-primary shadow-elegant' : ''}`}>
+      <Card className="overflow-hidden border-none shadow-md transition-all hover:shadow-glow hover:scale-105">
         <div className="aspect-video overflow-hidden relative">
           <img
             src={event.image}
             alt={event.title}
             className="h-full w-full object-cover transition-transform hover:scale-110"
           />
-          {isCourse && !isPast && (
-            <div className="absolute top-4 right-4">
-              <Badge variant="secondary" className="bg-primary text-primary-foreground shadow-lg">
-                {t('events.featured')}
-              </Badge>
-            </div>
-          )}
         </div>
         <CardContent className="p-6">
           <div className="mb-3 flex items-center gap-2">
@@ -122,7 +133,69 @@ const Events = () => {
               <Button className="w-full">{t('events.viewmore')}</Button>
             </Link>
           ) : (
-            <Button variant="outline" className="w-full" onClick={() => { setSelectedEvent(event); setIsGalleryOpen(true); }}>{t('events.gallery')}</Button>
+            <Button variant="outline" className="w-full" onClick={() => { setSelectedEvent(event); setIsGalleryEventOpen(true); }}>{t('events.gallery')}</Button>
+          )}
+        </CardFooter>
+      </Card>
+    );
+  };
+
+  const CourseCard = ({ course, isPast = false }: { course: any; isPast?: boolean }) => {
+    return (
+      <Card className="overflow-hidden border-none shadow-md transition-all hover:shadow-glow hover:scale-105 ring-2 ring-primary shadow-elegant">
+        <div className="aspect-video overflow-hidden relative">
+          <img
+            src={course.image}
+            alt={course.title}
+            className="h-full w-full object-cover transition-transform hover:scale-110"
+          />
+          {!isPast && (
+            <div className="absolute top-4 right-4">
+              <Badge variant="secondary" className="bg-primary text-primary-foreground shadow-lg">
+                {t('courses.featured')}
+              </Badge>
+            </div>
+          )}
+        </div>
+        <CardContent className="p-6">
+          <div className="mb-3 flex items-center gap-2">
+            <Badge variant="secondary">
+              {t('courses.badge')}
+            </Badge>
+          </div>
+          <h3 className="mb-2 text-xl font-bold">{course.title}</h3>
+          <p className="mb-4 text-sm text-muted-foreground">{course.description}</p>
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              <span>{course.date}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4" />
+              <span>{course.location}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4" />
+              <span>{course.hours} {t('courses.hours')}</span>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="p-6 pt-0">
+          {!isPast ? (
+            <Link to={`/courses/${course.id}`} className="w-full">
+              <Button className="w-full">{t('courses.viewmore')}</Button>
+            </Link>
+          ) : (
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => {
+                setSelectedCourse(course);
+                setIsGalleryCourseOpen(true);
+              }}
+            >
+              {t('courses.gallery')}
+            </Button>
           )}
         </CardFooter>
       </Card>
@@ -140,6 +213,62 @@ const Events = () => {
           <p className="mx-auto max-w-2xl text-lg text-primary-foreground/90 animate-slide-up">
             {t('events.description')}
           </p>
+        </div>
+      </section>
+
+      {/* Courses Section */}
+      <section className="section-padding bg-secondary/50">
+        <div className="container-custom">
+          <Tabs defaultValue="upcoming" className="w-full">
+            <TabsList className="mb-8 grid w-full max-w-md mx-auto grid-cols-2">
+              <TabsTrigger value="upcoming">{t('courses.upcoming')}</TabsTrigger>
+              <TabsTrigger value="past">{t('courses.past')}</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="upcoming" className="space-y-8">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {upcomingCourses.map((course) => (
+                  <CourseCard key={course.id} course={course} />
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="past" className="space-y-8">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {pastCourses.map((course) => (
+                  <CourseCard key={course.id} course={course} isPast />
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+
+          <Dialog open={isGalleryCourseOpen} onOpenChange={setIsGalleryCourseOpen} modal={false}>
+            <DialogContent className="max-w-5xl">
+              <DialogHeader>
+                <DialogTitle>
+                  {selectedCourse ? selectedCourse.title : t('courses.gallery')}
+                </DialogTitle>
+              </DialogHeader>
+
+              {selectedCourse?.gallery?.length ? (
+                <PhotoProvider>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                    {selectedCourse.gallery.map((img: string, index: number) => (
+                      <PhotoView key={index} src={img}>
+                        <img
+                          src={img}
+                          alt={`Gallery ${index + 1}`}
+                          className="h-48 w-full object-cover rounded-lg shadow-sm cursor-pointer transition-transform hover:scale-105"
+                        />
+                      </PhotoView>
+                    ))}
+                  </div>
+                </PhotoProvider>
+              ) : (
+                <p className="mt-4 text-sm text-muted-foreground">{t('courses.galleryEmpty')}</p>
+              )}
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
@@ -169,7 +298,7 @@ const Events = () => {
             </TabsContent>
           </Tabs>
 
-          <Dialog open={isGalleryOpen} onOpenChange={setIsGalleryOpen} modal={false}>
+          <Dialog open={isGalleryEventOpen} onOpenChange={setIsGalleryEventOpen} modal={false}>
             <DialogContent className="max-w-5xl">
               <DialogHeader>
                 <DialogTitle>

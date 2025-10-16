@@ -36,6 +36,12 @@ All colors MUST be HSL.
     --muted: 217 20% 96%;
     --muted-foreground: 217 16% 47%;
 
+    --internal: 50 100% 45%;
+    --internal-foreground: 0 0% 10%;
+
+    --cultural: 140 80% 35%; /* verde intenso y equilibrado */
+    --cultural-foreground: 0 0% 98%; /* texto claro sobre fondo verde */
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
@@ -78,6 +84,12 @@ All colors MUST be HSL.
 
     --secondary: 217 33% 20%;
     --secondary-foreground: 0 0% 98%;
+
+    --internal: 50 100% 45%;
+    --internal-foreground: 0 0% 10%;
+
+    --cultural: 140 80% 35%; /* verde intenso y equilibrado */
+    --cultural-foreground: 0 0% 98%; /* texto claro sobre fondo verde */
 
     --muted: 217 33% 20%;
     --muted-foreground: 217 16% 65%;

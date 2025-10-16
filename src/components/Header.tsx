@@ -30,7 +30,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container-custom flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img src="./logo.png" className='h-24' />
+          <img src='/logo.png' className='h-24' />
         </Link>
 
         {/* Desktop Navigation */}
