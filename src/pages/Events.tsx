@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, } from '@/components/ui/dialog';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+import { useLanguage } from '@/hooks/useLanguage';
 import { Calendar, MapPin, Users } from 'lucide-react';
 import eventWorkshop from '@/assets/event-workshop.jpg';
 import eventCompetition from '@/assets/event-competition.jpg';
@@ -18,8 +22,10 @@ const imageMap: Record<string, string> = {
 };
 
 const Events = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const [filter, setFilter] = useState<string>('all');
+  const [selectedEvent, setSelectedEvent] = useState<any | null>(null);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   const upcomingEvents = upcomingEventsData.map(e => ({
     ...e,
@@ -97,9 +103,11 @@ const Events = () => {
       </CardContent>
       <CardFooter className="p-6 pt-0">
         {!isPast ? (
-          <Button className="w-full">{t('events.register')}</Button>
+          <Link to={`/events/${event.id}`} className="w-full">
+            <Button className="w-full">{t('events.viewmore')}</Button>
+          </Link>
         ) : (
-          <Button variant="outline" className="w-full">{t('events.gallery')}</Button>
+          <Button variant="outline" className="w-full" onClick={() => { setSelectedEvent(event); setIsGalleryOpen(true); }}>{t('events.gallery')}</Button>
         )}
       </CardFooter>
     </Card>
@@ -144,6 +152,34 @@ const Events = () => {
               </div>
             </TabsContent>
           </Tabs>
+
+          <Dialog open={isGalleryOpen} onOpenChange={setIsGalleryOpen} modal={false}>
+            <DialogContent className="max-w-5xl">
+              <DialogHeader>
+                <DialogTitle>
+                  {selectedEvent ? selectedEvent.title : t('events.gallery')}
+                </DialogTitle>
+              </DialogHeader>
+
+              {selectedEvent?.gallery?.length ? (
+                <PhotoProvider>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                    {selectedEvent.gallery.map((img: string, index: number) => (
+                      <PhotoView key={index} src={img}>
+                        <img
+                          src={img}
+                          alt={`Gallery ${index + 1}`}
+                          className="h-48 w-full object-cover rounded-lg shadow-sm cursor-pointer transition-transform hover:scale-105"
+                        />
+                      </PhotoView>
+                    ))}
+                  </div>
+                </PhotoProvider>
+              ) : (
+                <p className="mt-4 text-sm text-muted-foreground">{t('events.galleryEmpty')}</p>
+              )}
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 

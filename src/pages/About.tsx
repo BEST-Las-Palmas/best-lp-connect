@@ -1,10 +1,10 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 import { Target, Eye, Users } from 'lucide-react';
 import boardMembersData from '@/settings/about.json';
 
 const About = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const boardMembers = boardMembersData.map(member => ({
     ...member,

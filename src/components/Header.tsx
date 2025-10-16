@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 import { useTheme } from '@/contexts/ThemeContext';
 
 const Header = () => {
@@ -30,12 +30,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container-custom flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-hero">
-            <image>
-              
-            </image>
-          </div>
-          <span className="text-xl font-bold gradient-text">BEST Las Palmas</span>
+          <img src="./logo.png" className='h-24' />
         </Link>
 
         {/* Desktop Navigation */}
@@ -44,9 +39,8 @@ const Header = () => {
             <Link
               key={item.name}
               to={item.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive(item.href) ? 'text-primary' : 'text-muted-foreground'
-              }`}
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive(item.href) ? 'text-primary' : 'text-muted-foreground'
+                }`}
             >
               {item.name}
             </Link>
@@ -106,15 +100,23 @@ const Header = () => {
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors ${
-                  isActive(item.href)
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
-                }`}
+                className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors ${isActive(item.href)
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+                  }`}
               >
                 {item.name}
               </Link>
             ))}
+
+            <a
+              href="https://www.best.eu.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors text-muted-foreground hover:bg-secondary hover:text-foreground`}
+            >
+              BEST International
+            </a>
           </div>
         </div>
       )}

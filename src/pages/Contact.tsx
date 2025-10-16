@@ -4,14 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, MapPin } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import socialLinks from '@/settings/social-links.json';
 
 const Contact = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({

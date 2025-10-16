@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import * as LucideIcons from 'lucide-react';
 import { Mail, MapPin } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 import socialLinks from '@/settings/social-links.json';
 
 const Footer = () => {
@@ -43,20 +43,17 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="md:text-right md:flex md:flex-col md:items-end">
             <h3 className="mb-4 text-sm font-semibold">{t('contact.info.title')}</h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 text-muted-foreground" />
-                <a
-                  href="mailto:laspalmas@best.eu.org"
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                >
+            <div className="space-y-3 w-full md:w-auto">
+              <div className="flex items-center justify-start md:justify-end gap-2">
+                <Mail className="h-4 w-4 text-muted-foreground" />
+                <a href="mailto:laspalmas@best.eu.org" className="text-sm text-muted-foreground transition-colors hover:text-primary">
                   laspalmas@best.eu.org
                 </a>
               </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 text-muted-foreground" />
+              <div className="flex items-center justify-start md:justify-end gap-2">
+                <MapPin className="h-4 w-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
                   {t('contact.info.location.text')}
                 </span>
@@ -64,9 +61,9 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="mt-6">
+            <div className="mt-6 w-full md:w-auto">
               <h4 className="mb-3 text-sm font-semibold">{t('footer.social')}</h4>
-              <div className="flex gap-3">
+              <div className="flex justify-start md:justify-end gap-3">
                 {socialLinks.map((social) => {
                   const Icon = (LucideIcons as any)[social.icon];
                   return (

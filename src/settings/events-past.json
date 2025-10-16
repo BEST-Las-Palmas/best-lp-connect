@@ -7,7 +7,12 @@
     "type": "competition",
     "location": "ULPGC",
     "participants": 80,
-    "image": "eventCompetition"
+    "image": "eventCompetition",
+    "gallery": [
+      "/logo.png",
+      "/logo.png",
+      "/logo.png"
+    ]
   },
   {
     "id": 5,
@@ -17,6 +22,7 @@
     "type": "workshop",
     "location": "ULPGC - Edificio de Informática",
     "participants": 50,
-    "image": "eventWorkshop"
+    "image": "eventWorkshop",
+    "gallery": []
   }
 ]

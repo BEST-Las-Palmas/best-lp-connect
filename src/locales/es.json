@@ -58,7 +58,7 @@
     "about.board.it": "IT",
     "about.board.it.quote": "La cabeza tecnologíca del equipo",
 
-    "about.board.events": "Mascota",
+    "about.board.pet": "Mascota",
     "about.board.pet.quote": "Nuestro querido miembro más antiguo",
 
     "history.title": "Nuestra Historia",
@@ -71,12 +71,17 @@
     "events.upcoming": "Próximos Eventos",
     "events.past": "Eventos Pasados",
     "events.register": "Inscribirse",
+    "events.viewmore": "Ver mas",
     "events.gallery": "Ver Galería",
+    "events.galleryEmpty": "No hay imágenes disponibles para este evento.",
     "events.filter.all": "Todos",
     "events.filter.workshop": "Workshops",
     "events.filter.course": "Cursos",
     "events.filter.competition": "Competencias",
     "events.participants": "participantes",
+    "events.notfound": "Evento no encontrado.",
+    "events.back": "Volver a eventos",
+    "events.registerNow": "Inscribirme ahora",
 
     "events.upcoming.1.title": "Workshop de Inteligencia Artificial",
     "events.upcoming.1.date": "15 de Noviembre, 2025",

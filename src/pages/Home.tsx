@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, Users, Globe2, Lightbulb } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 import heroImage from '@/assets/hero-students.jpg';
 
 const Home = () => {
@@ -30,8 +30,6 @@ const Home = () => {
       title: t('home.values.cooperation'),
       description: t('home.values.cooperation.desc'),
     },
-    
-
   ];
 
   return (
