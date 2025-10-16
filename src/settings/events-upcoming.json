@@ -7,7 +7,20 @@
     "type": "workshop",
     "location": "ULPGC - Edificio de Informática",
     "participants": 40,
-    "image": "eventWorkshop"
+    "image": "eventWorkshop",
+    "objectives": [
+      "events.upcoming.1.objective1",
+      "events.upcoming.1.objective2",
+      "events.upcoming.1.objective3"
+    ],
+    "agenda": [
+      { "time": "09:00", "activityKey": "events.upcoming.1.agenda1" },
+      { "time": "11:00", "activityKey": "events.upcoming.1.agenda2" },
+      { "time": "14:00", "activityKey": "events.upcoming.1.agenda3" },
+      { "time": "16:00", "activityKey": "events.upcoming.1.agenda4" }
+    ],
+    "gallery": [],
+    "registrationUrl": "https://forms.gle/example1"
   },
   {
     "id": 2,
@@ -17,7 +30,20 @@
     "type": "competition",
     "location": "ULPGC - Laboratorio de Robótica",
     "participants": 60,
-    "image": "eventCompetition"
+    "image": "eventCompetition",
+    "objectives": [
+      "events.upcoming.2.objective1",
+      "events.upcoming.2.objective2",
+      "events.upcoming.2.objective3"
+    ],
+    "agenda": [
+      { "time": "10:00", "activityKey": "events.upcoming.2.agenda1" },
+      { "time": "12:00", "activityKey": "events.upcoming.2.agenda2" },
+      { "time": "15:00", "activityKey": "events.upcoming.2.agenda3" },
+      { "time": "17:00", "activityKey": "events.upcoming.2.agenda4" }
+    ],
+    "gallery": [],
+    "registrationUrl": "https://forms.gle/example2"
   },
   {
     "id": 3,
@@ -27,6 +53,19 @@
     "type": "course",
     "location": "ULPGC - Campus Tafira",
     "participants": 30,
-    "image": "eventWorkshop"
+    "image": "eventWorkshop",
+    "objectives": [
+      "events.upcoming.3.objective1",
+      "events.upcoming.3.objective2",
+      "events.upcoming.3.objective3"
+    ],
+    "agenda": [
+      { "time": "09:00", "activityKey": "events.upcoming.3.agenda1" },
+      { "time": "11:30", "activityKey": "events.upcoming.3.agenda2" },
+      { "time": "14:00", "activityKey": "events.upcoming.3.agenda3" },
+      { "time": "16:30", "activityKey": "events.upcoming.3.agenda4" }
+    ],
+    "gallery": [],
+    "registrationUrl": "https://forms.gle/example3"
   }
 ]
