@@ -7,7 +7,7 @@
     "type": "internal",
     "location": "ULPGC - Edificio de Informática",
     "participants": 40,
-    "image": "eventWorkshop",
+    "image": "assets/event-workshop.jpg",
     "objectives": [
       "events.upcoming.1.objective1",
       "events.upcoming.1.objective2",
@@ -30,7 +30,7 @@
     "type": "competition",
     "location": "ULPGC - Laboratorio de Robótica",
     "participants": 60,
-    "image": "eventCompetition",
+    "image": "assets/event-competition.jpg",
     "objectives": [
       "events.upcoming.2.objective1",
       "events.upcoming.2.objective2",

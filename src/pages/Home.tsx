@@ -7,7 +7,7 @@ import { getImage } from '@/lib/imageMap';
 
 const Home = () => {
   const { t } = useLanguage();
-  const heroImage = getImage('heroStudents');
+  const heroImage = getImage('assets/hero-students.jpg');
 
   const stats = [
     { value: '3000+', label: t('home.stats.students') },

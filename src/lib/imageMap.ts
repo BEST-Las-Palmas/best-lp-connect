@@ -1,26 +1,33 @@
-// Centralized image imports for the entire application
-// Add all your images here with descriptive names
+// Centralized image handling for the entire application
+// This file automatically imports images from the assets folder based on file paths
 
-import eventWorkshop from '@/assets/event-workshop.jpg';
-import eventCompetition from '@/assets/event-competition.jpg';
-import heroStudents from '@/assets/hero-students.jpg';
+const imageModules = import.meta.glob('@/assets/**/*.{png,jpg,jpeg,svg,webp}', { eager: true });
 
-// Board members placeholder - add real images here
-// Example: import memberSusana from '@/assets/team/susana.jpg';
+/**
+ * Get an image by its path relative to src/
+ * Example: getImage('assets/event-workshop.jpg') or getImage('assets/team/member1.png')
+ */
+export const getImage = (imagePath: string): string | undefined => {
+  // If it's an emoji or external URL, return as is
+  if (!imagePath || imagePath.startsWith('http') || imagePath.startsWith('👤') || imagePath.length < 10) {
+    return imagePath;
+  }
 
-export const imageMap: Record<string, string> = {
-  // Events and courses
-  eventWorkshop,
-  eventCompetition,
+  // Normalize the path: remove leading slash if present and ensure it starts with 'assets/'
+  let normalizedPath = imagePath.replace(/^\/+/, '');
+  if (!normalizedPath.startsWith('assets/')) {
+    normalizedPath = `assets/${normalizedPath}`;
+  }
+
+  // Try to find the image in the imported modules
+  const fullPath = `/@/assets/${normalizedPath.replace('assets/', '')}`;
   
-  // Hero images
-  heroStudents,
-  
-  // Board members - add real member photos here
-  // Example: memberSusana: memberSusana,
-  // For now, using emoji fallback handled in the component
-};
+  for (const [path, module] of Object.entries(imageModules)) {
+    if (path.includes(normalizedPath.replace('assets/', ''))) {
+      return (module as any).default;
+    }
+  }
 
-export const getImage = (imageName: string): string | undefined => {
-  return imageMap[imageName];
+  console.warn(`Image not found: ${imagePath}`);
+  return undefined;
 };

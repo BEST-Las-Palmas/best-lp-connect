@@ -7,7 +7,7 @@
     "type": "internal",
     "location": "Cortijo de Huertas",
     "participants": 40,
-    "image": "eventCompetition",
+    "image": "assets/event-competition.jpg",
     "objectives": [
       "events.past.1.objective1",
       "events.past.1.objective2",
@@ -33,7 +33,7 @@
     "type": "cultural",
     "location": "ULPGC - Edificio de Informática",
     "participants": 50,
-    "image": "eventWorkshop",
+    "image": "assets/event-workshop.jpg",
     "objectives": [
       "events.past.2.objective1",
       "events.past.2.objective2",
