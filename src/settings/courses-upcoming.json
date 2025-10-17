@@ -16,6 +16,16 @@
       "courses.upcoming.1.objective2",
       "courses.upcoming.1.objective3"
     ],
+    "agenda": [
+      {
+        "time": "09:00",
+        "activityKey": "courses.upcoming.1.agenda1"
+      },
+      {
+        "time": "11:00",
+        "activityKey": "courses.upcoming.1.agenda2"
+      }
+    ],
     "gallery": [],
     "registrationUrl": "https://www.best.eu.org/courses/list.jsp"
   }

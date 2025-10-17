@@ -3,48 +3,64 @@
       "name": "Susana",
       "position": "about.board.president",
       "quote": "about.board.president.quote",
-      "image": "👤"
+      "image": "👤",
+      "linkedin": "",
+      "email": ""
     },
     {
       "name": "Miguel",
       "position": "about.board.secretary",
       "quote": "about.board.secretary.quote",
-      "image": "👤"
+      "image": "👤",
+      "linkedin": "",
+      "email": ""
     },
     {
       "name": "Juan Carlos",
       "position": "about.board.treasurer",
       "quote": "about.board.treasurer.quote",
-      "image": "👤"
+      "image": "👤",
+      "linkedin": "",
+      "email": ""
     },
     {
       "name": "María",
       "position": "about.board.hr",
       "quote": "about.board.hr.quote",
-      "image": "👤"
+      "image": "👤",
+      "linkedin": "",
+      "email": ""
     },
     {
       "name": "Adrian",
       "position": "about.board.cr",
       "quote": "about.board.cr.quote",
-      "image": "👤"
+      "image": "👤",
+      "linkedin": "",
+      "email": ""
     },
     {
       "name": "Camila",
       "position": "about.board.prd",
       "quote": "about.board.prd.quote",
-      "image": "👤"
+      "image": "👤",
+      "linkedin": "",
+      "email": ""
     },
     {
       "name": "Óscar",
       "position": "about.board.it",
       "quote": "about.board.it.quote",
-      "image": "👤"
+      "image": "👤",
+      "linkedin": "",
+      "email": ""
     },
     {
       "name": "Palmito",
       "position": "about.board.pet",
       "quote": "about.board.pet.quote",
-      "image": "👤"
+      "image": "👤",
+      "linkedin": "",
+      "email": ""
     }
 ]

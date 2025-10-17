@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/useLanguage';
-import { Target, Eye, Users } from 'lucide-react';
+import { Target, Eye, Users, Linkedin, Mail } from 'lucide-react';
 import boardMembersData from '@/settings/about.json';
 
 const About = () => {
@@ -96,7 +96,31 @@ const About = () => {
                   </div>
                   <h3 className="mb-1 text-lg font-bold">{member.name}</h3>
                   <p className="mb-3 text-sm font-semibold text-primary">{member.position}</p>
-                  <p className="text-xs italic text-muted-foreground">"{member.quote}"</p>
+                  <p className="text-xs italic text-muted-foreground mb-3">"{member.quote}"</p>
+                  
+                  {/* Social links */}
+                  <div className="flex justify-center gap-3 mt-4">
+                    {boardMembersData[index].linkedin && (
+                      <a
+                        href={boardMembersData[index].linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors"
+                        aria-label={`LinkedIn de ${member.name}`}
+                      >
+                        <Linkedin className="h-4 w-4" />
+                      </a>
+                    )}
+                    {boardMembersData[index].email && (
+                      <a
+                        href={`mailto:${boardMembersData[index].email}`}
+                        className="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors"
+                        aria-label={`Email de ${member.name}`}
+                      >
+                        <Mail className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
