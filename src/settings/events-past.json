@@ -7,22 +7,8 @@
     "type": "internal",
     "location": "Cortijo de Huertas",
     "participants": 40,
-    "image": "assets/event-competition.jpg",
-    "objectives": [
-      "events.past.1.objective1",
-      "events.past.1.objective2",
-      "events.past.1.objective3"
-    ],
-    "agenda": [
-      { "time": "09:00", "activityKey": "events.past.1.agenda1" },
-      { "time": "12:00", "activityKey": "events.past.1.agenda2" },
-      { "time": "18:00", "activityKey": "events.past.1.agenda3" },
-      { "time": "21:00", "activityKey": "events.past.1.agenda4" }
-    ],
+    "image": "assets/mw.png",
     "gallery": [
-      "/logo.png",
-      "/logo.png",
-      "/logo.png"
     ]
   },
   {
@@ -31,20 +17,10 @@
     "dateKey": "events.past.2.date",
     "descriptionKey": "events.past.2.description",
     "type": "cultural",
-    "location": "ULPGC - Edificio de Informática",
+    "location": "Europa",
     "participants": 50,
-    "image": "assets/event-workshop.jpg",
-    "objectives": [
-      "events.past.2.objective1",
-      "events.past.2.objective2",
-      "events.past.2.objective3"
-    ],
-    "agenda": [
-      { "time": "10:00", "activityKey": "events.past.2.agenda1" },
-      { "time": "12:00", "activityKey": "events.past.2.agenda2" },
-      { "time": "15:00", "activityKey": "events.past.2.agenda3" },
-      { "time": "17:00", "activityKey": "events.past.2.agenda4" }
-    ],
-    "gallery": []
+    "image": "assets/cultural.png",
+    "gallery": [
+    ]
   }
 ]

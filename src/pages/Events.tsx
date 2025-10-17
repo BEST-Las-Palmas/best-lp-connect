@@ -250,7 +250,7 @@ const Events = () => {
                     {selectedCourse.gallery.map((img: string, index: number) => (
                       <PhotoView key={index} src={img}>
                         <img
-                          src={img}
+                          src={getImage(img)}
                           alt={`Gallery ${index + 1}`}
                           className="h-48 w-full object-cover rounded-lg shadow-sm cursor-pointer transition-transform hover:scale-105"
                         />
@@ -303,15 +303,18 @@ const Events = () => {
               {selectedEvent?.gallery?.length ? (
                 <PhotoProvider>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                    {selectedEvent.gallery.map((img: string, index: number) => (
-                      <PhotoView key={index} src={img}>
-                        <img
-                          src={img}
-                          alt={`Gallery ${index + 1}`}
-                          className="h-48 w-full object-cover rounded-lg shadow-sm cursor-pointer transition-transform hover:scale-105"
-                        />
-                      </PhotoView>
-                    ))}
+                    {selectedEvent.gallery.map((img: string, index: number) => {
+                      const resolvedImg = getImage(img);
+                      return (
+                        <PhotoView key={index} src={resolvedImg}>
+                          <img
+                            src={resolvedImg}
+                            alt={`Gallery ${index + 1}`}
+                            className="h-48 w-full object-cover rounded-lg shadow-sm cursor-pointer transition-transform hover:scale-105"
+                          />
+                        </PhotoView>
+                      );
+                    })}
                   </div>
                 </PhotoProvider>
               ) : (

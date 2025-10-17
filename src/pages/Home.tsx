@@ -7,7 +7,7 @@ import { getImage } from '@/lib/imageMap';
 
 const Home = () => {
   const { t } = useLanguage();
-  const heroImage = getImage('assets/hero-students.jpg');
+  const heroImage = getImage('assets/hero-students.png');
 
   const stats = [
     { value: '3000+', label: t('home.stats.students') },
@@ -37,7 +37,7 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero py-20 md:py-32">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-25">
           <img
             src={heroImage}
             alt="Students collaborating"

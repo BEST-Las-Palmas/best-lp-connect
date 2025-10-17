@@ -5,9 +5,9 @@
     "dateKey": "events.upcoming.1.date",
     "descriptionKey": "events.upcoming.1.description",
     "type": "internal",
-    "location": "ULPGC - Edificio de Informática",
+    "location": "ULPGC",
     "participants": 40,
-    "image": "assets/event-workshop.jpg",
+    "image": "assets/logo.png",
     "objectives": [
       "events.upcoming.1.objective1",
       "events.upcoming.1.objective2",
@@ -21,28 +21,5 @@
     ],
     "gallery": [],
     "registrationUrl": "https://forms.gle/example1"
-  },
-  {
-    "id": 2,
-    "titleKey": "events.upcoming.2.title",
-    "dateKey": "events.upcoming.2.date",
-    "descriptionKey": "events.upcoming.2.description",
-    "type": "competition",
-    "location": "ULPGC - Laboratorio de Robótica",
-    "participants": 60,
-    "image": "assets/event-competition.jpg",
-    "objectives": [
-      "events.upcoming.2.objective1",
-      "events.upcoming.2.objective2",
-      "events.upcoming.2.objective3"
-    ],
-    "agenda": [
-      { "time": "10:00", "activityKey": "events.upcoming.2.agenda1" },
-      { "time": "12:00", "activityKey": "events.upcoming.2.agenda2" },
-      { "time": "15:00", "activityKey": "events.upcoming.2.agenda3" },
-      { "time": "17:00", "activityKey": "events.upcoming.2.agenda4" }
-    ],
-    "gallery": [],
-    "registrationUrl": "https://forms.gle/example2"
   }
 ]

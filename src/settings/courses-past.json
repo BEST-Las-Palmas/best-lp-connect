@@ -1,32 +1,12 @@
 [
   {
     "id": 3,
-    "titleKey": "courses.upcoming.1.title",
-    "dateKey": "courses.upcoming.1.date",
-    "descriptionKey": "courses.upcoming.1.description",
+    "titleKey": "courses.past.1.title",
+    "dateKey": "courses.past.1.date",
+    "descriptionKey": "courses.past.1.description",
     "type": "course",
     "location": "ULPGC - Campus Tafira",
     "hours": 26,
-    "price": "150€",
-    "image": "assets/event-workshop.jpg",
-    "scheduleUrl": "https://drive.google.com/file/d/example-schedule",
-    "survivalGuideUrl": "https://drive.google.com/file/d/example-survival-guide",
-    "objectives": [
-      "courses.upcoming.1.objective1",
-      "courses.upcoming.1.objective2",
-      "courses.upcoming.1.objective3"
-    ],
-    "agenda": [
-      {
-        "time": "09:00",
-        "activityKey": "courses.upcoming.1.agenda1"
-      },
-      {
-        "time": "11:00",
-        "activityKey": "courses.upcoming.1.agenda2"
-      }
-    ],
-    "gallery": [],
-    "registrationUrl": "https://www.best.eu.org/courses/list.jsp"
+    "image": "assets/curso-24.png"
   }
 ]

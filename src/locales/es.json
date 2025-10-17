@@ -37,7 +37,7 @@
     "about.board.title": "Junta Directiva",
     "about.board.description": "Conoce al equipo que hace posible BEST Las Palmas",
 
-    "about.board.president": "Presidente",
+    "about.board.president": "Presidenta",
     "about.board.president.quote": "Liderando con pasion",
 
     "about.board.secretary": "Secretario",
@@ -47,7 +47,7 @@
     "about.board.treasurer.quote": "Manejando los recursos y maximizando su impacto",
 
     "about.board.hr": "Recursos Humanos",
-    "about.board.hr.quote": "Construyendo equipos y creando lideres",
+    "about.board.hr.quote": "Construyendo equipos y creando líderes",
 
     "about.board.cr": "Relaciones Corporativas",
     "about.board.cr.quote": "Conectando a los estudiantes con la industria",
@@ -56,7 +56,7 @@
     "about.board.prd.quote": "Creando historias que comparten nuestra vision",
 
     "about.board.it": "IT",
-    "about.board.it.quote": "La cabeza tecnologíca del equipo",
+    "about.board.it.quote": "La cabeza tecnológica del equipo",
 
     "about.board.pet": "Mascota",
     "about.board.pet.quote": "Nuestro querido miembro más antiguo",
@@ -152,9 +152,13 @@
     "courses.upcoming.1.agenda3": "Diseño e Integración de Bases de Datos",
     "courses.upcoming.1.agenda4": "Despliegue y Mejores Prácticas",
 
-    "events.upcoming.1.title": "Workshop de Inteligencia Artificial",
-    "events.upcoming.1.date": "15 de Noviembre, 2025",
-    "events.upcoming.1.description": "Aprende los fundamentos del Machine Learning y Deep Learning con expertos del sector.",
+    "courses.past.1.title": "Greensters, inc: EcO-Manual fOr Scarers",
+    "courses.past.1.date": "14-22 de Marzo, 2024",
+    "courses.past.1.description": "El mundo esta desesperado. El cambio climático empeora año a año y las emisiones crecen. Unete al curso para formar parte de la revolución",
+
+    "events.upcoming.1.title": "Best Development",
+    "events.upcoming.1.date": "Desconocida",
+    "events.upcoming.1.description": "Aprende de profesionales del sector las mejores técnicas para encontrar tu primer empleo",
     "events.upcoming.1.objective1": "Comprender los fundamentos del Machine Learning",
     "events.upcoming.1.objective2": "Construir tu primera red neuronal",
     "events.upcoming.1.objective3": "Aplicar IA a problemas del mundo real",
@@ -163,35 +167,13 @@
     "events.upcoming.1.agenda3": "Pausa para Almorzar y Networking",
     "events.upcoming.1.agenda4": "Proyectos de Deep Learning y Q&A",
 
-    "events.upcoming.2.title": "Competencia de Robótica",
-    "events.upcoming.2.date": "3 de Diciembre, 2025",
-    "events.upcoming.2.description": "Demuestra tus habilidades en robótica y compite con otros estudiantes de tecnología.",
-    "events.upcoming.2.objective1": "Diseñar y construir robots autónomos",
-    "events.upcoming.2.objective2": "Competir en varios desafíos de robótica",
-    "events.upcoming.2.objective3": "Conectar con profesionales de la industria",
-    "events.upcoming.2.agenda1": "Registro y Configuración de Equipos",
-    "events.upcoming.2.agenda2": "Primer Desafío: Seguimiento de Línea",
-    "events.upcoming.2.agenda3": "Segundo Desafío: Carrera de Obstáculos",
-    "events.upcoming.2.agenda4": "Finales y Ceremonia de Premios",
-
-    "events.upcoming.3.title": "Curso BEST: Desarrollo Web Avanzado",
-    "events.upcoming.3.date": "10–15 de Enero, 2026",
-    "events.upcoming.3.description": "Curso intensivo de una semana sobre tecnologías web modernas y mejores prácticas.",
-    "events.upcoming.3.objective1": "Dominar frameworks frontend modernos",
-    "events.upcoming.3.objective2": "Aprender desarrollo backend y APIs",
-    "events.upcoming.3.objective3": "Construir una aplicación full-stack",
-    "events.upcoming.3.agenda1": "Fundamentos de React y TypeScript",
-    "events.upcoming.3.agenda2": "Backend con Node.js & Express",
-    "events.upcoming.3.agenda3": "Diseño e Integración de Bases de Datos",
-    "events.upcoming.3.agenda4": "Despliegue y Mejores Prácticas",
-
     "events.past.1.title": "Motivational Weekend",
     "events.past.1.date": "2-4 de Mayo, 2025",
     "events.past.1.description": "Evento interno para desconectar y hacer team building",
 
-    "events.past.2.title": "Workshop de Ciberseguridad",
-    "events.past.2.date": "5 de Octubre, 2025",
-    "events.past.2.description": "Aprende sobre seguridad informática, ethical hacking y protección de datos.",
+    "events.past.2.title": "Intercambio Cultural",
+    "events.past.2.date": "2024",
+    "events.past.2.description": "Aprende sobre otras culturas y haz amigos por Europa",
     
     "contact.title": "Contáctanos",
     "contact.subtitle": "¿Tienes preguntas? Estamos aquí para ayudarte",

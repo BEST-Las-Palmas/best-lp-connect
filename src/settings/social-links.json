@@ -1,5 +1,4 @@
 [
-    { "icon": "Facebook", "href": "https://facebook.com", "label": "Facebook" },
-    { "icon": "Instagram", "href": "https://instagram.com", "label": "Instagram" },
-    { "icon": "Linkedin", "href": "https://linkedin.com", "label": "LinkedIn" }
+    { "icon": "Instagram", "href": "https://www.instagram.com/bestlaspalmas/?hl=es", "label": "Instagram" },
+    { "icon": "Linkedin", "href": "https://www.linkedin.com/company/board-of-european-students-of-technology-las-palmas/posts/?feedView=all", "label": "LinkedIn" }
 ]

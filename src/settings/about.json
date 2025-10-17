@@ -3,63 +3,63 @@
       "name": "Susana",
       "position": "about.board.president",
       "quote": "about.board.president.quote",
-      "image": "👤",
-      "linkedin": "",
-      "email": ""
+      "image": "assets/board/susana.png",
+      "linkedin": "https://www.linkedin.com/in/susana-ferraz-rodr%C3%ADguez-38b553300/",
+      "email": "susana.ferraz.rodriguez@best-eu.org"
     },
     {
       "name": "Miguel",
       "position": "about.board.secretary",
       "quote": "about.board.secretary.quote",
-      "image": "👤",
+      "image": "assets/board/miguel.png",
       "linkedin": "",
-      "email": ""
+      "email": "miguel.angel.garcia@best-eu.org"
     },
     {
       "name": "Juan Carlos",
       "position": "about.board.treasurer",
       "quote": "about.board.treasurer.quote",
-      "image": "👤",
-      "linkedin": "",
-      "email": ""
+      "image": "assets/board/juanki.png",
+      "linkedin": "https://www.linkedin.com/in/juan-carlos-hern%C3%A1ndez-henr%C3%ADquez-8a966a22b/",
+      "email": "juan.carlos.hernadez.henriquez@best-eu.org"
     },
     {
       "name": "María",
       "position": "about.board.hr",
       "quote": "about.board.hr.quote",
-      "image": "👤",
+      "image": "assets/board/maria.png",
       "linkedin": "",
-      "email": ""
+      "email": "maria.pais.betancor@best-eu.org"
     },
     {
       "name": "Adrian",
       "position": "about.board.cr",
       "quote": "about.board.cr.quote",
-      "image": "👤",
+      "image": "assets/board/adrian.png",
       "linkedin": "",
-      "email": ""
+      "email": "adrian.domiguez@best-eu.org"
     },
     {
       "name": "Camila",
       "position": "about.board.prd",
       "quote": "about.board.prd.quote",
-      "image": "👤",
+      "image": "assets/board/camila.png",
       "linkedin": "",
-      "email": ""
+      "email": "camila.pena.cardona@best-eu.org"
     },
     {
       "name": "Óscar",
       "position": "about.board.it",
       "quote": "about.board.it.quote",
-      "image": "👤",
-      "linkedin": "",
-      "email": ""
+      "image": "assets/board/oscar.png",
+      "linkedin": "https://www.linkedin.com/in/orr21/",
+      "email": "oscar.rico.rodriguez@best-eu.org"
     },
     {
       "name": "Palmito",
       "position": "about.board.pet",
       "quote": "about.board.pet.quote",
-      "image": "👤",
+      "image": "assets/board/palmito.png",
       "linkedin": "",
       "email": ""
     }
