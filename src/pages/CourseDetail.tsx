@@ -8,14 +8,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 import upcomingCoursesData from '@/settings/courses-upcoming.json';
 import pastCoursesData from '@/settings/courses-past.json';
-import bestCourses from '@/assets/logo-courses.png';
-import eventWorkshop from '@/assets/event-workshop.jpg';
-import eventCompetition from '@/assets/event-competition.jpg';
-
-const imageMap: Record<string, string> = {
-  eventWorkshop,
-  eventCompetition,
-};
+import { getImage } from '@/lib/imageMap';
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -32,7 +25,7 @@ const CourseDetail = () => {
     );
   }
 
-  const image = imageMap[course.image];
+  const image = getImage(course.image) || course.image;
   const title = t(course.titleKey);
   const date = t(course.dateKey);
   const description = t(course.descriptionKey);

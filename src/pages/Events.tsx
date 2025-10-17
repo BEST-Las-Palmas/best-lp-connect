@@ -9,8 +9,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Calendar, MapPin, Users, Clock } from 'lucide-react';
-import eventWorkshop from '@/assets/event-workshop.jpg';
-import eventCompetition from '@/assets/event-competition.jpg';
+import { getImage } from '@/lib/imageMap';
 
 import upcomingEventsData from '@/settings/events-upcoming.json';
 import pastEventsData from '@/settings/events-past.json';
@@ -18,11 +17,6 @@ import pastEventsData from '@/settings/events-past.json';
 import upcomingCoursesData from '@/settings/courses-upcoming.json';
 import pastCoursesData from '@/settings/courses-past.json';
 import testimonialsData from '@/settings/testimonials.json';
-
-const imageMap: Record<string, string> = {
-  eventWorkshop,
-  eventCompetition,
-};
 
 const Events = () => {
   const { t } = useLanguage();
@@ -37,7 +31,7 @@ const Events = () => {
     title: t(e.titleKey),
     date: t(e.dateKey),
     description: t(e.descriptionKey),
-    image: imageMap[e.image],
+    image: getImage(e.image) || e.image,
   }));
 
   const pastEvents = pastEventsData.map(e => ({
@@ -45,7 +39,7 @@ const Events = () => {
     title: t(e.titleKey),
     date: t(e.dateKey),
     description: t(e.descriptionKey),
-    image: imageMap[e.image],
+    image: getImage(e.image) || e.image,
   }));
 
   const upcomingCourses = upcomingCoursesData.map(c => ({
@@ -53,7 +47,7 @@ const Events = () => {
     title: t(c.titleKey),
     date: t(c.dateKey),
     description: t(c.descriptionKey),
-    image: imageMap[c.image],
+    image: getImage(c.image) || c.image,
   }));
 
   const pastCourses = pastCoursesData.map(c => ({
@@ -61,7 +55,7 @@ const Events = () => {
     title: t(c.titleKey),
     date: t(c.dateKey),
     description: t(c.descriptionKey),
-    image: imageMap[c.image],
+    image: getImage(c.image) || c.image,
   }));
 
   const getTypeLabel = (type: string) => {

@@ -2,6 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Target, Eye, Users, Linkedin, Mail } from 'lucide-react';
 import boardMembersData from '@/settings/about.json';
+import { getImage } from '@/lib/imageMap';
 
 const About = () => {
   const { t } = useLanguage();
@@ -91,8 +92,16 @@ const About = () => {
                 className="border-none bg-card shadow-md transition-all hover:shadow-glow hover:scale-105"
               >
                 <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex h-24 w-24 mx-auto items-center justify-center rounded-full bg-gradient-hero text-4xl">
-                    {member.image}
+                  <div className="mb-4 flex h-24 w-24 mx-auto items-center justify-center rounded-full bg-gradient-hero overflow-hidden">
+                    {getImage(boardMembersData[index].image) ? (
+                      <img 
+                        src={getImage(boardMembersData[index].image)} 
+                        alt={member.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-4xl">{boardMembersData[index].image}</span>
+                    )}
                   </div>
                   <h3 className="mb-1 text-lg font-bold">{member.name}</h3>
                   <p className="mb-3 text-sm font-semibold text-primary">{member.position}</p>

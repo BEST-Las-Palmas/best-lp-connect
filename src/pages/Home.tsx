@@ -3,10 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, Users, Globe2, Lightbulb } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
-import heroImage from '@/assets/hero-students.jpg';
+import { getImage } from '@/lib/imageMap';
 
 const Home = () => {
   const { t } = useLanguage();
+  const heroImage = getImage('heroStudents');
 
   const stats = [
     { value: '3000+', label: t('home.stats.students') },

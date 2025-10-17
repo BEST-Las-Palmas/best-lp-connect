@@ -8,13 +8,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 import upcomingEventsData from '@/settings/events-upcoming.json';
 import pastEventsData from '@/settings/events-past.json';
-import eventWorkshop from '@/assets/event-workshop.jpg';
-import eventCompetition from '@/assets/event-competition.jpg';
-
-const imageMap: Record<string, string> = {
-  eventWorkshop,
-  eventCompetition,
-};
+import { getImage } from '@/lib/imageMap';
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -31,7 +25,7 @@ const EventDetail = () => {
     );
   }
 
-  const image = imageMap[event.image];
+  const image = getImage(event.image) || event.image;
   const title = t(event.titleKey);
   const date = t(event.dateKey);
   const description = t(event.descriptionKey);
