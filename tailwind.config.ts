@@ -122,6 +122,14 @@ export default {
             transform: "scale(1)",
           },
         },
+        "scroll-left": {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-33.333%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -129,6 +137,8 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-up": "slide-up 0.6s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
+        "scroll-left": "scroll-left 30s linear infinite",
+        "scroll-left-fast": "scroll-left 20s linear infinite",
       },
     },
   },
