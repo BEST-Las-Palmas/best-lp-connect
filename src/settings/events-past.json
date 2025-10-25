@@ -8,8 +8,9 @@
     "location": "Cortijo de Huertas",
     "participants": 40,
     "image": "assets/mw.png",
-    "gallery": [
-    ]
+    "objectives": [],
+    "agenda": [],
+    "gallery": []
   },
   {
     "id": 5,
@@ -20,7 +21,8 @@
     "location": "Europa",
     "participants": 50,
     "image": "assets/cultural.png",
-    "gallery": [
-    ]
+    "objectives": [],
+    "agenda": [],
+    "gallery": []
   }
 ]

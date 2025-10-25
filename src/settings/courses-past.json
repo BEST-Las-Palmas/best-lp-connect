@@ -7,6 +7,13 @@
     "type": "course",
     "location": "ULPGC - Campus Tafira",
     "hours": 26,
-    "image": "assets/curso-24.png"
+    "price": "150€",
+    "image": "assets/curso-24.png",
+    "scheduleUrl": "",
+    "survivalGuideUrl": "",
+    "registrationUrl": "",
+    "objectives": [],
+    "agenda": [],
+    "gallery": []
   }
 ]

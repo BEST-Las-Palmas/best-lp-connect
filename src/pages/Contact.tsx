@@ -1,40 +1,11 @@
-import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { useLanguage } from '@/hooks/useLanguage';
-import { useToast } from '@/hooks/use-toast';
 import { Mail, MapPin } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import socialLinks from '@/settings/social-links.json';
 
 const Contact = () => {
   const { t } = useLanguage();
-  const { toast } = useToast();
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: t('contact.form.success'),
-      description: t('contact.form.description'),
-    });
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
 
   return (
     <div className="min-h-screen">
@@ -53,53 +24,7 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {/* Contact Form */}
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Label htmlFor="name">{t('contact.form.name')}</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="mt-2"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">{t('contact.form.email')}</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="mt-2"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="message">{t('contact.form.message')}</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="mt-2"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full" size="lg">
-                    {t('contact.form.send')}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
+          <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
             {/* Contact Information */}
             <div className="space-y-6">
               <Card className="border-none bg-gradient-card shadow-lg">

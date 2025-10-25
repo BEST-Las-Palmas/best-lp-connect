@@ -4,6 +4,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, Users, Globe2, Lightbulb } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { getImage } from '@/lib/imageMap';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import sponsorsCurrent from '@/settings/sponsors-current.json';
+import sponsorsPast from '@/settings/sponsors-past.json';
 
 const Home = () => {
   const { t } = useLanguage();
@@ -121,6 +125,104 @@ const Home = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
+            {t('home.sponsors.title')}
+          </h2>
+          
+          {/* Current Sponsors */}
+          <div className="mb-12">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                })
+              ]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {sponsorsCurrent.map((sponsor) => (
+                  <CarouselItem key={sponsor.id} className="md:basis-1/3 lg:basis-1/4">
+                    <div className="p-4">
+                      <a 
+                        href={sponsor.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block transition-transform hover:scale-105"
+                      >
+                        <Card className="border-none shadow-md">
+                          <CardContent className="flex aspect-square items-center justify-center p-6">
+                            <img 
+                              src={getImage(sponsor.image) || sponsor.image} 
+                              alt={sponsor.name}
+                              className="max-h-full max-w-full object-contain"
+                            />
+                          </CardContent>
+                        </Card>
+                      </a>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+
+          {/* Past Sponsors */}
+          <div>
+            <h3 className="mb-6 text-center text-xl font-semibold text-muted-foreground">
+              {t('home.sponsors.past')}
+            </h3>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 2500,
+                })
+              ]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {sponsorsPast.map((sponsor) => (
+                  <CarouselItem key={sponsor.id} className="md:basis-1/4 lg:basis-1/5">
+                    <div className="p-2">
+                      <a 
+                        href={sponsor.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block transition-transform hover:scale-105"
+                      >
+                        <Card className="border-none shadow-sm">
+                          <CardContent className="flex aspect-square items-center justify-center p-4">
+                            <img 
+                              src={getImage(sponsor.image) || sponsor.image} 
+                              alt={sponsor.name}
+                              className="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity"
+                            />
+                          </CardContent>
+                        </Card>
+                      </a>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </section>
