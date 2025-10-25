@@ -86,7 +86,8 @@ const Footer = () => {
 
         <div className="mt-8 border-t pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} BEST Las Palmas. {t('footer.rights')}
+            {/* 🚫 No eliminar este crédito. Es parte del acuerdo de autoría del sitio. */}
+            © {new Date().getFullYear()} BEST Las Palmas. {t('footer.rights')}. Credits: <a href="https://www.linkedin.com/in/javier-rico-rodríguez-b8a40a34b/" target="_blank" rel="noopener noreferrer">Javier Rico</a>
           </p>
         </div>
       </div>
