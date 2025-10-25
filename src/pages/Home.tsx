@@ -13,8 +13,8 @@ const Home = () => {
 
   const stats = [
     { value: '3000+', label: t('home.stats.students') },
-    { value: '20+', label: t('home.stats.events') },
-    { value: '90+', label: t('home.stats.universities') },
+    { value: '20+', label: t('home.stats.countries') },
+    { value: '80+', label: t('home.stats.universities') },
   ];
 
   const values = [

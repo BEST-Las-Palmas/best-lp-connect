@@ -11,13 +11,13 @@
     
     "home.about.title": "What is BEST?",
     "home.about.subtitle": "Board of European Students of Technology",
-    "home.about.description": "BEST is an international non-profit student organization connecting over 3,000 technology students from 90 European universities. We promote complementary education, cultural exchange, and cooperation among engineering students.",
+    "home.about.description": "BEST is an international non-profit student organization connecting over 3,000 technology students from 83 European universities. We promote complementary education, cultural exchange, and cooperation among engineering students.",
     
     "home.local.title": "BEST Las Palmas",
     "home.local.description": "We are the local BEST group at Universidad de Las Palmas de Gran Canaria (ULPGC). We organize courses, workshops, engineering competitions, and cultural exchange events for technology students.",
     
     "home.stats.students": "Active Students",
-    "home.stats.events": "Events per Year",
+    "home.stats.countries": "Countries",
     "home.stats.universities": "Universities in Europe",
     
     "home.values.title": "Our Values",
@@ -65,7 +65,7 @@
     "about.board.pet.quote": "Our dearest oldest member",
 
     "history.title": "Our History",
-    "history.1": "BEST Las Palmas is part of Board of European Students of Technology (BEST), an international non-profit student organization founded in 1989 that connects technology students from over 90 European universities.",
+    "history.1": "BEST Las Palmas is part of Board of European Students of Technology (BEST), an international non-profit student organization founded in 1989 that connects technology students from over 80 European universities.",
     "history.2": "Our local group at Universidad de Las Palmas de Gran Canaria works to offer students unique opportunities for personal and professional development, complementing their academic training with practical experiences and international connections.",
     "history.3": "Through BEST courses, technical workshops, engineering competitions, and cultural exchange events, we create an environment where students can grow, learn, and connect with professionals and peers from across Europe.",
     
