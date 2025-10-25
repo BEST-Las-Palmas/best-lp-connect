@@ -3,7 +3,7 @@
     "id": 3,
     "titleKey": "courses.upcoming.1.title",
     "dateKey": "courses.upcoming.1.date",
-    "shortdescriptionKey": "courses.upcoming.1.shortdescription",
+    "descriptionKey": "courses.upcoming.1.description",
     "type": "course",
     "location": "ULPGC - Campus Tafira",
     "hours": 26,
@@ -16,13 +16,16 @@
       "courses.upcoming.1.objective2",
       "courses.upcoming.1.objective3"
     ],
-    "whatYouWillLearn": [
-      "courses.upcoming.1.learn1",
-      "courses.upcoming.1.learn2",
-      "courses.upcoming.1.learn3",
-      "courses.upcoming.1.learn4"
+    "agenda": [
+      {
+        "time": "09:00",
+        "activityKey": "courses.upcoming.1.agenda1"
+      },
+      {
+        "time": "11:00",
+        "activityKey": "courses.upcoming.1.agenda2"
+      }
     ],
-    "agenda": [],
     "gallery": [],
     "registrationUrl": "https://www.best.eu.org/courses/list.jsp"
   }

@@ -72,22 +72,24 @@ const EventDetail = () => {
                   </ul>
                 </div>
 
-                {event.agenda && (
-                  <div>
-                    <h3 className="font-semibold mb-2 flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      {t('events.detail.agenda')}
-                    </h3>
-                    <ul className="space-y-2">
-                      {event.agenda.map((item: any, idx: number) => (
+              {event.agenda && event.agenda.some((item: any) => item.activityKey && t(item.activityKey)?.trim() !== '') && (
+                <div>
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    {t('events.detail.agenda')}
+                  </h3>
+                  <ul className="space-y-2">
+                    {event.agenda
+                      .filter((item: any) => item.activityKey && t(item.activityKey)?.trim() !== '')
+                      .map((item: any, idx: number) => (
                         <li key={idx} className="flex gap-3 text-sm">
                           <span className="font-medium text-primary min-w-20">{item.time}</span>
                           <span className="text-muted-foreground">{t(item.activityKey)}</span>
                         </li>
                       ))}
-                    </ul>
-                  </div>
-                )}
+                  </ul>
+                </div>
+              )}
               </CardContent>
             </Card>
 

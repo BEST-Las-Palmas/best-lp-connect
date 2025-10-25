@@ -127,82 +127,88 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Sponsors Section */}
-      <section className="section-padding overflow-hidden">
-        <div className="container-custom">
-          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
-            {t('home.sponsors.title')}
-          </h2>
-        </div>
-        
-        {/* Current Sponsors - Full Width */}
-        <div className="mb-12 w-full overflow-hidden">
-          <div className="flex animate-scroll-left hover:[animation-play-state:paused]">
-            {/* Duplicate sponsors 3 times for smooth infinite scroll */}
-            {[...Array(3)].map((_, groupIndex) => (
-              <div key={groupIndex} className="flex flex-shrink-0">
-                {sponsorsCurrent.map((sponsor, index) => (
-                  <div key={`${groupIndex}-${sponsor.id}-${index}`} className="w-64 flex-shrink-0 px-4">
-                    <a 
-                      href={sponsor.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block transition-transform hover:scale-105"
-                    >
-                      <Card className="border-none shadow-md">
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                          <img 
-                            src={getImage(sponsor.image) || sponsor.image} 
-                            alt={sponsor.name}
-                            className="max-h-full max-w-full object-contain"
-                          />
-                        </CardContent>
-                      </Card>
-                    </a>
+        {/* Sponsors Section */}
+      {(sponsorsCurrent.length > 0 || sponsorsPast.length > 0) && (
+        <section className="section-padding overflow-hidden">
+          <div className="container-custom">
+            <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
+              {t('home.sponsors.title')}
+            </h2>
+          </div>
+
+          {/* Current Sponsors */}
+          {sponsorsCurrent.length > 0 && (
+            <div className="mb-12 w-full overflow-hidden">
+              <div className="flex animate-scroll-left hover:[animation-play-state:paused]">
+                {[...Array(3)].map((_, groupIndex) => (
+                  <div key={groupIndex} className="flex flex-shrink-0">
+                    {sponsorsCurrent.map((sponsor, index) => (
+                      <div key={`${groupIndex}-${sponsor.id}-${index}`} className="w-64 flex-shrink-0 px-4">
+                        <a
+                          href={sponsor.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block transition-transform hover:scale-105"
+                        >
+                          <Card className="border-none shadow-md">
+                            <CardContent className="flex aspect-square items-center justify-center p-6">
+                              <img
+                                src={getImage(sponsor.image) || sponsor.image}
+                                alt={sponsor.name}
+                                className="max-h-full max-w-full object-contain"
+                              />
+                            </CardContent>
+                          </Card>
+                        </a>
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          )}
 
-        <div className="container-custom">
-          <h3 className="mb-6 text-center text-xl font-semibold text-muted-foreground">
-            {t('home.sponsors.past')}
-          </h3>
-        </div>
-
-        {/* Past Sponsors - Full Width */}
-        <div className="w-full overflow-hidden">
-          <div className="flex animate-scroll-left-fast hover:[animation-play-state:paused]">
-            {/* Duplicate sponsors 3 times for smooth infinite scroll */}
-            {[...Array(3)].map((_, groupIndex) => (
-              <div key={groupIndex} className="flex flex-shrink-0">
-                {sponsorsPast.map((sponsor, index) => (
-                  <div key={`${groupIndex}-${sponsor.id}-${index}`} className="w-48 flex-shrink-0 px-2">
-                    <a 
-                      href={sponsor.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block transition-transform hover:scale-105"
-                    >
-                      <Card className="border-none shadow-sm">
-                        <CardContent className="flex aspect-square items-center justify-center p-4">
-                          <img 
-                            src={getImage(sponsor.image) || sponsor.image} 
-                            alt={sponsor.name}
-                            className="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity"
-                          />
-                        </CardContent>
-                      </Card>
-                    </a>
-                  </div>
-                ))}
+          {/* Past Sponsors */}
+          {sponsorsPast.length > 0 && (
+            <>
+              <div className="container-custom">
+                <h3 className="mb-6 text-center text-xl font-semibold text-muted-foreground">
+                  {t('home.sponsors.past')}
+                </h3>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
+              <div className="w-full overflow-hidden">
+                <div className="flex animate-scroll-left-fast hover:[animation-play-state:paused]">
+                  {[...Array(3)].map((_, groupIndex) => (
+                    <div key={groupIndex} className="flex flex-shrink-0">
+                      {sponsorsPast.map((sponsor, index) => (
+                        <div key={`${groupIndex}-${sponsor.id}-${index}`} className="w-48 flex-shrink-0 px-2">
+                          <a
+                            href={sponsor.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block transition-transform hover:scale-105"
+                          >
+                            <Card className="border-none shadow-sm">
+                              <CardContent className="flex aspect-square items-center justify-center p-4">
+                                <img
+                                  src={getImage(sponsor.image) || sponsor.image}
+                                  alt={sponsor.name}
+                                  className="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity"
+                                />
+                              </CardContent>
+                            </Card>
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-hero">

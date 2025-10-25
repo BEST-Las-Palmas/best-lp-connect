@@ -28,7 +28,7 @@ const CourseDetail = () => {
   const image = getImage(course.image) || course.image;
   const title = t(course.titleKey);
   const date = t(course.dateKey);
-  const description = t(course.descriptionKey);
+  const description = t(course.shortdescriptionKey);
 
   return (
     <div className="min-h-screen">
@@ -45,7 +45,7 @@ const CourseDetail = () => {
 
         <div className="relative z-10 container-custom text-center text-white px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">{title}</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-slide-up">{description}</p>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-slide-up whitespace-pre-line">{description}</p>
           {course.registrationUrl && (
             <Button size="lg" className="text-lg px-8 py-6 animate-scale-in" asChild>
               <a href={course.registrationUrl} target="_blank" rel="noopener noreferrer">
@@ -102,33 +102,28 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      {/* Why Section */}
+            {/* What You'll Learn Section */}
       <section className="section-padding bg-secondary/30">
-        <div className="container-custom max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            {t('courses.whyTitle')}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {course.objectives?.map((obj: string, idx: number) => (
-              <Card key={idx} className="border-none shadow-md hover:shadow-glow transition-all">
-                <CardContent className="p-6 text-center">
-                  <h3 className="font-bold text-lg mb-3">{t(obj)}</h3>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What You'll Learn Section */}
-      <section className="section-padding bg-background">
         <div className="container-custom max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             {t('courses.learnTitle')}
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-            {t('courses.learnSubtitle')}
-          </p>
+    {course.whatYouWillLearn && (
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+        {course.whatYouWillLearn.map((key: string, idx: number) => (
+          <Card
+            key={idx}
+            className="border-none shadow-md hover:shadow-glow transition-all max-w-sm mx-auto"
+          >
+            <CardContent className="p-6 text-center">
+              <h3 className="font-semibold text-lg text-primary">
+                {t(key)}
+              </h3>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    )}
 
           {course.agenda && (
             <div className="grid md:grid-cols-2 gap-8">
@@ -145,6 +140,28 @@ const CourseDetail = () => {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Why Section */}
+      <section className="section-padding bg-background">
+        <div className="container-custom max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            {t('courses.whyTitle')}
+          </h2>
+<div className="grid gap-6 justify-center"
+     style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+  {course.objectives?.map((obj: string, idx: number) => (
+    <Card
+      key={idx}
+      className="border-none shadow-md hover:shadow-glow transition-all max-w-sm mx-auto"
+    >
+      <CardContent className="p-6 text-center">
+        <h3 className="font-bold text-lg mb-3">{t(obj)}</h3>
+      </CardContent>
+    </Card>
+  ))}
+</div>
         </div>
       </section>
 

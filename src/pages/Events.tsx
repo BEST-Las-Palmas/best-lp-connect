@@ -158,7 +158,6 @@ const Events = () => {
             </Badge>
           </div>
           <h3 className="mb-2 text-xl font-bold">{course.title}</h3>
-          <p className="mb-4 text-sm text-muted-foreground">{course.description}</p>
           <div className="space-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />

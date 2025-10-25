@@ -11,10 +11,14 @@
     "objectives": [
       "events.upcoming.1.objective1",
       "events.upcoming.1.objective2",
-      "events.upcoming.1.objective3",
-      "events.upcoming.1.objective4"
+      "events.upcoming.1.objective3"
     ],
-    "agenda": [],
+    "agenda": [
+      { "time": "09:00", "activityKey": "events.upcoming.1.agenda1" },
+      { "time": "11:00", "activityKey": "events.upcoming.1.agenda2" },
+      { "time": "14:00", "activityKey": "events.upcoming.1.agenda3" },
+      { "time": "16:00", "activityKey": "events.upcoming.1.agenda4" }
+    ],
     "gallery": [],
     "registrationUrl": "https://forms.gle/example1"
   }

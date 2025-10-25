@@ -48,8 +48,8 @@ const Footer = () => {
             <div className="space-y-3 w-full md:w-auto">
               <div className="flex items-center justify-start md:justify-end gap-2">
                 <Mail className="h-4 w-4 text-muted-foreground" />
-                <a href="mailto:laspalmas@best.eu.org" className="text-sm text-muted-foreground transition-colors hover:text-primary">
-                  laspalmas@best.eu.org
+                <a href="mailto:laspalmas@best-eu.org" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  laspalmas@best-eu.org
                 </a>
               </div>
               <div className="flex items-center justify-start md:justify-end gap-2">
