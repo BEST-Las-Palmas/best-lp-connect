@@ -13,7 +13,7 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 
 const Contact = () => {
   const { t } = useLanguage();
-  const phoneNumber = "+34 123 456 789"; // Configurable
+  const phoneNumber = "+34 623 003 912"; // Configurable
 
   return (
     <div className="min-h-screen">

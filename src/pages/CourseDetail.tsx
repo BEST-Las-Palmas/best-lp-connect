@@ -208,13 +208,7 @@ const CourseDetail = () => {
               {t('courses.videoTitle')}
             </h2>
             <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src={course.videoUrl}
-                title={title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute top-0 left-0 w-full h-full"
-              />
+              <iframe className="absolute top-0 left-0 w-full h-full" src={course.videoUrl} title={title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
           </div>
         </section>
