@@ -46,7 +46,7 @@ const Events = () => {
     ...c,
     title: t(c.titleKey),
     date: t(c.dateKey),
-    description: t(c.descriptionKey),
+    description: t(c.shortdescriptionKey),
     image: getImage(c.image) || c.image,
   }));
 

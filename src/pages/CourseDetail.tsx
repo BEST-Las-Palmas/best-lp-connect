@@ -28,7 +28,7 @@ const CourseDetail = () => {
   const image = getImage(course.image) || course.image;
   const title = t(course.titleKey);
   const date = t(course.dateKey);
-  const description = t(course.shortdescriptionKey);
+  const description = t('shortdescriptionKey' in course ? course.shortdescriptionKey : course.descriptionKey);
 
   return (
     <div className="min-h-screen">
@@ -102,13 +102,14 @@ const CourseDetail = () => {
         </div>
       </section>
 
-            {/* What You'll Learn Section */}
+      {/* What You'll Learn Section */}
+      {'whatYouWillLearn' in course && course.whatYouWillLearn && course.whatYouWillLearn.length > 0 && (
       <section className="section-padding bg-secondary/30">
         <div className="container-custom max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             {t('courses.learnTitle')}
           </h2>
-    {course.whatYouWillLearn && (
+    {(
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
         {course.whatYouWillLearn.map((key: string, idx: number) => (
           <Card
@@ -142,6 +143,7 @@ const CourseDetail = () => {
           )}
         </div>
       </section>
+      )}
 
       {/* Why Section */}
       <section className="section-padding bg-background">
@@ -197,6 +199,26 @@ const CourseDetail = () => {
           </Card>
         </div>
       </section>
+
+      {/* YouTube Video Section */}
+      {'videoUrl' in course && course.videoUrl && (
+        <section className="section-padding bg-background">
+          <div className="container-custom max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+              {t('courses.videoTitle')}
+            </h2>
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src={course.videoUrl}
+                title={title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Gallery */}
       {course.gallery && course.gallery.length > 0 && (
