@@ -1,4 +1,5 @@
 [
     { "icon": "Instagram", "href": "https://www.instagram.com/bestlaspalmas/?hl=es", "label": "Instagram" },
-    { "icon": "Linkedin", "href": "https://www.linkedin.com/company/board-of-european-students-of-technology-las-palmas/posts/?feedView=all", "label": "LinkedIn" }
+    { "icon": "Linkedin", "href": "https://www.linkedin.com/company/board-of-european-students-of-technology-las-palmas/posts/?feedView=all", "label": "LinkedIn" },
+    { "icon": "TikTok", "href": "https://www.tiktok.com/@bestlaspalmas", "label": "TikTok" }
 ]
